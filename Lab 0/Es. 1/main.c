@@ -1,14 +1,16 @@
 #include <stdio.h>
 
-int findLenght(int a[10]) {
+const int N = 30;
+int findLenght(int a[N], int n) {
     int i = 0;
     int lenght = 0;
-    int maxlenght;
-    while (i < 10) {
+    int maxlenght = 0;
+    while (i < n) {
         //printf("%d", a[i]);
         if (a[i] != 0) {
             lenght++;
-            maxlenght = lenght;
+            if(lenght > maxlenght)
+                maxlenght = lenght;
         }
         else
             lenght = 0;
@@ -17,25 +19,41 @@ int findLenght(int a[10]) {
     return maxlenght;
 }
 
-void printsV(int a[10], int lenght){
+void printsV(int a[N], int lenght){
     int i = 0;
+    int index;
     int c = 0;
     while(i < 10){
-
         if (a[i] != 0) {
             c++;
-            if(c==lenght)
-                printf("%d %d %d\n", a[i-2], a[i-1], a[i]);
-        }
+            if(c==lenght) {
+                for(int j=lenght -1 ; j>=0; j--){
+                    //devo stampre a partire dalla i a cui sono arrivato e poi i successivi
+                    //lenght numeri
+                    index = i - j;
+                    printf("%d", a[index]);
+                }
+                printf("\n");
+            }
+            }
         else
             c = 0;
         i++;
     }
 }
 
-int a [10] = {1, 3, 4, 0, 1, 0, 9, 4, 2, 0};
 int main() {
-    int b = findLenght(a);
+    int a [N];
+    int l = 0, temp;
+    for(int i = 0; i<N; i++){
+        printf("inserire elemento %d (inserire -1 per terminare)", i);
+        scanf("%d", &temp);
+        if(temp == -1)
+            break;
+        a[i] = temp;
+        l++;
+    }
+    int b = findLenght(a, l);
     //printf("%d", b);
     printsV(a, b);
     return 0;

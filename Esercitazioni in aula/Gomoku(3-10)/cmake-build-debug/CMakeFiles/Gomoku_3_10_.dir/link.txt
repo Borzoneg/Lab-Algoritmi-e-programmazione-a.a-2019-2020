@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Gomoku_3_10_.dir/main.c.o  -o Gomoku_3_10_ 

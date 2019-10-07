@@ -1,4 +1,4 @@
-/opt/clion-2019.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/media/guglielmo/9E7B-0448/Programmazione/C/A.A. 2019-2020/Lab 0/Es. 2"
+/opt/clion-2019.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/media/guglielmo/9E7B-0448/Programmazione/C/Algoritmi-e-programmazione-a.a-2019-2020/Lab 0/Es. 2"
 -- The C compiler identification is GNU 6.3.0
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
@@ -8,4 +8,4 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /media/guglielmo/9E7B-0448/Programmazione/C/A.A. 2019-2020/Lab 0/Es. 2/cmake-build-debug
+-- Build files have been written to: /media/guglielmo/9E7B-0448/Programmazione/C/Algoritmi-e-programmazione-a.a-2019-2020/Lab 0/Es. 2/cmake-build-debug
