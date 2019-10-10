@@ -21,7 +21,7 @@ int main() {
         fscanf(fp, "%d %d", &nc, &nr);
     }
 
-    leggiFile(fp, matrix, nc, nr);
+    //leggiFile(fp, matrix, nc, nr);
 
     while(dim < 0){
         printf("Quale dev'essere la dimsensione delle sottomatrici?");

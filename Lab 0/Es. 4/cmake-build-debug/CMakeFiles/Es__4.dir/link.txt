@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/Es__4.dir/main.c.o  -o Es__4 
+/usr/bin/cc -g   CMakeFiles/Es__4.dir/main.c.o  -o Es__4 -lm 
