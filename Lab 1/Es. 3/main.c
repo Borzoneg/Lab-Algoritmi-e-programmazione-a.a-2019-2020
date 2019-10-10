@@ -58,19 +58,19 @@ void ruota(int m[NC][NR], int nc, int nr, int index, int P, int dir, int vers){
             temp1 = m[index][0];
             for (i = 0; i < nr; i++) {
                 if (i == nr - 1)
-                    // gestisco lo sforamento oltre il limite del vettore dello spostamento verso dx
+                    // gestisco lo sforamento oltre il limite del vettore dello spostamento verso giù
                     if(vers == 1)
                         m[0][index] = temp1;
-                        // gestisco lo sforamento pre 0 dello spostamento verso sx
+                        // gestisco lo sforamento pre 0 dello spostamento verso su
                     else
                         m[i][index] = temp1;
-                    // spostamento verso dx
+                    // spostamento verso giù
                 else if(vers == 1) {
                     temp2 = m[i+1][index];
                     m[i+1][index] = temp1;
                     temp1 = temp2;
                 }
-                    // spostamento verso sx
+                    // spostamento verso su
                 else {
                     m[i][index] = m[i+1][index];
                 }
