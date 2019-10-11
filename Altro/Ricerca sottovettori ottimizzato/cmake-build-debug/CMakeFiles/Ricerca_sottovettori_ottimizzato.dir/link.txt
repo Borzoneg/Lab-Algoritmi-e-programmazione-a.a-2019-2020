@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Ricerca_sottovettori_ottimizzato.dir/main.c.o  -o Ricerca_sottovettori_ottimizzato 
