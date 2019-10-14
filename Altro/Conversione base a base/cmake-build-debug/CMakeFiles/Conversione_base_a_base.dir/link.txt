@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/Conversione_base_a_base.dir/main.c.o  -o Conversione_base_a_base -lm 
