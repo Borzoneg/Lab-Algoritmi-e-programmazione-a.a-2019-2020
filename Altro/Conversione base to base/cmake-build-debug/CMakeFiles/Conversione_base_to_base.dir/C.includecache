@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/guglielmo/9E7B-0448/Programmazione/C/Altro/Conversione base to base/main.c
+stdio.h
+-
+math.h
+-
+time.h
+-
+

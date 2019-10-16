@@ -1,0 +1,4 @@
+/opt/clion-2019.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/media/guglielmo/9E7B-0448/Programmazione/C/Altro/Conversione base to base"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /media/guglielmo/9E7B-0448/Programmazione/C/Altro/Conversione base to base/cmake-build-debug
