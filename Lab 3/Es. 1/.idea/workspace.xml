@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="Es__2" targetName="Es__2" />
+      <config projectName="Es__1" targetName="Es__1" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,8 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6da5a7c2-e20d-4818-bc50-4e61ca7e59ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+    <list default="true" id="2ff8c5d5-ea06-4061-82d6-6d70c664f518" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Lab 2/Es. 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 2/Es. 2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 2/Es. 2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 2/Es. 2/main.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +28,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1S3BYSNMUFdZPQuD7zdiBbUF5vA" />
+  <component name="ProjectId" id="1STp4s9hLgpW4QscQi60SF1dCiH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lab 2/Es. 1" />
     <property name="settings.editor.selected.configurable" value="language.cpp.clangd" />
   </component>
   <component name="RunDashboard">
@@ -47,7 +48,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Es__2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Es__2" TARGET_NAME="Es__2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Es__2" RUN_TARGET_NAME="Es__2">
+    <configuration name="Es__1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Es__1" TARGET_NAME="Es__1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Es__1" RUN_TARGET_NAME="Es__1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -58,17 +59,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6da5a7c2-e20d-4818-bc50-4e61ca7e59ed" name="Default Changelist" comment="" />
-      <created>1570782445923</created>
+      <changelist id="2ff8c5d5-ea06-4061-82d6-6d70c664f518" name="Default Changelist" comment="" />
+      <created>1571597251194</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570782445923</updated>
-      <workItem from="1570782447895" duration="486000" />
-      <workItem from="1571046367892" duration="666000" />
-      <workItem from="1571066583931" duration="36000" />
-      <workItem from="1571213019850" duration="4723000" />
-      <workItem from="1571334528422" duration="10038000" />
-      <workItem from="1571597057817" duration="193000" />
+      <updated>1571597251194</updated>
+      <workItem from="1571597253249" duration="4970000" />
     </task>
     <servers />
   </component>
@@ -80,9 +76,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -93,15 +87,10 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>57</line>
-          <option name="timeStamp" value="6" />
+          <line>11</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="r[0].codiceTratta" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

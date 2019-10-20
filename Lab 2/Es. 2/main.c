@@ -49,7 +49,7 @@ int main() {
     rigaLog r[R];
     menu scelta;
     char comando[C], data1[C], data2[C], dato[C];
-    int continua = 1, nr, v[R];
+    int continua = 1, nr;
     data datainiz, datafin;
 
     nr = leggiFile("corse.txt", r);
@@ -256,3 +256,4 @@ void isInInterval(rigaLog dati[R], int nr, data inizio, data fine, int risultati
         }
     }
 }
+#pragma clang diagnostic pop

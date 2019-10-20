@@ -29,7 +29,7 @@ int main() {
 }
 
 void trovaMassimi(int matrix[NC][NR], int nc, int nr, int risultati[15]) {
-    int i, j, k, base = 0, area = 0, alte = 0, finito;
+    int i, j, k, q, base = 0, area = 0, alte = 0, finito;
 
     for (i = 0; i < 15; i++)
         risultati[i] = 0;
@@ -57,6 +57,12 @@ void trovaMassimi(int matrix[NC][NR], int nc, int nr, int risultati[15]) {
                         matrix[k][j] = 0;
                     } else
                         finito = 1;
+                }
+
+                // pongo a zero anche le celle del rettangolo che non fanno parte di base e altezza
+                for(k=i+1; k<i+alte; k++){
+                    for(q=j+1; q<j+base; q++)
+                        matrix[k][q] = 0;
                 }
                 area = base * alte;
 
