@@ -5,6 +5,9 @@
 void stampaCodifica (void *p, int size, int bigEndian);
 int isBigEndian(void);
 void toBin(int bin [N], int dec);
+void stampafloat(int size, int bin[size*8]);
+void stampadouble(int size, int bin[size*8]);
+void stampalong(int size, int bin[size*8]);
 
 int main() {
     double a;
@@ -40,8 +43,8 @@ int isBigEndian(){
 
 
 void stampaCodifica (void *p, int size, int bigEndian) {
-    int i, k;
-    int byte[8];
+    int i, k, j;
+    int byte[8], bin[8*size];
     unsigned char a[size];
     unsigned char *b = p;
 
@@ -56,15 +59,61 @@ void stampaCodifica (void *p, int size, int bigEndian) {
     }
     // Little endian
     else {
-        for (i = size - 1; i >= 0; i--) {
+        for (j = 0, i = size - 1; i >= 0; i--) {
             toBin(byte, a[i]);
-            for (k = 0; k < 8; k++) {
-                printf("%d", byte[k]);
+            for (k = 0; k < 8; k++, j++) {
+                bin[j] = byte[k];
             }
-            printf(" ");
         }
-        printf("\n");
     }
+
+    switch (size){
+        case 4:
+            stampafloat(size, bin);
+            break;
+        case 8:
+            stampadouble(size, bin);
+            break;
+        case 16:
+            stampalong(size, bin);
+            break;
+    }
+}
+
+
+void stampafloat(int size, int bin[size*8]){
+    int i;
+    printf("%d ", bin[0]);
+    for(i=1; i<9; i++)
+        printf("%d", bin[i]);
+    printf(" ");
+    for(i=9; i<size*8; i++)
+        printf("%d", bin[i]);
+    printf("\n");
+}
+
+
+void stampadouble(int size, int bin[size*8]){
+    int i;
+    printf("%d ", bin[0]);
+    for(i=1; i<12; i++)
+        printf("%d", bin[i]);
+    printf(" ");
+    for(i=12; i<size*8; i++)
+        printf("%d", bin[i]);
+    printf("\n");
+}
+
+
+void stampalong(int size, int bin[size*8]){
+    int i;
+    printf("%d ", bin[i]);
+    for(i=1; i<16; i++)
+        printf("%d", bin[i]);
+    printf(" ");
+    for(i=16; i<size*8; i++)
+        printf("%d", bin[i]);
+    printf("\n");
 }
 
 
