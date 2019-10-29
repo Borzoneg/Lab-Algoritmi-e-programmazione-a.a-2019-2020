@@ -1,22 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
-const int N = 200;
+#define N 200
+
 void replace(char parola[], char originale[], char ricodifica[], char sostituita[], int pos);
-int fileOk(FILE *fp);
-void codifica(char filename1[N], filename2[N]);
+void codifica(char filename1[N], char filename2[N]);
 
 int main() {
     codifica("dizionario", "sorgente");
     return 0;
 }
 
-
-int fileOk(FILE *fp){
-    if(fp == NULL)
-        return 0;
-    return 1;
-}
 
 
 void replace(char parola[], char originale[], char ricodifica[], char sostituita[], int pos){
@@ -25,7 +19,7 @@ void replace(char parola[], char originale[], char ricodifica[], char sostituita
     // ciclo lungo la parola carattere per carattere
     for(i=0, k=0; i<strlen(parola); i++, k++){
         c = parola[i];
-        // quando arrivo alla posizione dove iniia la sottostringa da sostituire entro
+        // quando arrivo alla posizione dove inizia la sottostringa da sostituire entro
         if(i == pos && !sostituito){
             // ciclo per la lunghezza della stringa da mettere es: $33$
             for(; j<(strlen(ricodifica)); j++){
@@ -47,15 +41,16 @@ void replace(char parola[], char originale[], char ricodifica[], char sostituita
 }
 
 
-void codifica(char filenamed[N], filenames[N]){
-    FILE *fs, *fd;
+void codifica(char filenamed[N], char filename2[N]){
+    FILE *fs, *fd, *fr;
     char parola[N], ricodifica[N], originale[N], sostituita[N];
     char *n, c;
     int nsos = 0, trovato=0, i, pos;
-    fs = fopen(filenames, "r");
+    fs = fopen(filename2, "r");
     fd = fopen(filenamed, "r");
+    fr = fopen("Risultato", "w");
 
-    if(!fileOk(fs) || !fileOk(fd)){
+    if(fs == NULL|| fd == NULL){
         printf("File non trovati");
         return;
     }
@@ -87,12 +82,14 @@ void codifica(char filenamed[N], filenames[N]){
         // se trovo una corrispondenza nel file scriverò la nuova parola con il carattere che sarà niente se no ha
         // trovato niente oppure il carattere '\n'
         if(trovato)
-            fprintf(stdout, "%s %c", sostituita, c);
+            fprintf(fr, "%s%c", sostituita, c);
+
             // se non ho trovato corrispondenza ristampo la parola lasciata com'era
         else
-            fprintf(stdout, "%s %c", parola, c);
+            fprintf(fr, "%s%c", parola, c);
         trovato = 0;
     }
     fclose(fd);
     fclose(fs);
+    fclose(fr);
 }

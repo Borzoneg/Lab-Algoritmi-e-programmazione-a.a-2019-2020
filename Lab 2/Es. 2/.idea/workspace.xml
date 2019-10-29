@@ -12,7 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6da5a7c2-e20d-4818-bc50-4e61ca7e59ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Altro/Conversione base to base/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Altro/Conversione base to base/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 1/Es. 1/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 1/Es. 1/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 1/Es. 2.0/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 1/Es. 2.0/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Es. 1/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Es. 1/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__2.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__2.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Es__2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Es__2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 3/Es. 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 3/Es. 1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 3/Es. 1/cmake-build-debug/CMakeFiles/Es__1.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 3/Es. 1/cmake-build-debug/CMakeFiles/Es__1.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 3/Es. 1/cmake-build-debug/Es__1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 3/Es. 1/cmake-build-debug/Es__1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 3/Es. 1/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 3/Es. 1/main.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +42,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lab 1/Es. 2.0" />
     <property name="settings.editor.selected.configurable" value="language.cpp.clangd" />
   </component>
   <component name="RunDashboard">
@@ -69,6 +80,8 @@
       <workItem from="1571213019850" duration="4723000" />
       <workItem from="1571334528422" duration="10038000" />
       <workItem from="1571597057817" duration="193000" />
+      <workItem from="1572336531054" duration="954000" />
+      <workItem from="1572337975128" duration="15000" />
     </task>
     <servers />
   </component>
@@ -89,15 +102,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>57</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="r[0].codiceTratta" />

@@ -1,6 +1,3 @@
-// TODO: controllo su date
-//       input delle date più flessibile
-
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -54,9 +51,6 @@ int main() {
 
     nr = leggiFile("corse.txt", r);
 
-//    ritardoTotFunz(r, nr, "123456");
-    ritardoTotFunz(r, nr, "123456");
-
     while(continua) {
         printf("Inserisci comando:\n"
                "date: per vedere le corse partite in un intervallo di date\n"
@@ -71,39 +65,36 @@ int main() {
         scelta = leggicomando(comando);
         switch (scelta) {
             case date:
-                printf("Comando inserito: %s\n"
-                       "Inserire data di inizio e di fine nel formato: dd-mm-yyyy\n", comando);
-
                 scanf("%s %s", data1, data2);
                 datainiz = fromStringtoDate(data1);
                 datafin = fromStringtoDate(data2);
-                dateFunz(r, nr, datainiz, datafin);
+                if(datainiz.giorno != -1 && datafin.giorno != -1)
+                    dateFunz(r, nr, datainiz, datafin);
+                else
+                    printf("Inserita data non corretta o formattata male\n");
                 break;
             case partenza:
-                printf("Comando inserito: %s\nInserire la stazione di partenze\n", comando);
                 scanf("%s", dato);
                 partenzeFunz(r, nr, dato);
                 break;
             case capolinea:
-                printf("Comando inserito: %s\nInserire la stazione capolinea\n", comando);
                 scanf("%s", dato);
                 capolineaFunz(r, nr, dato);
                 break;
             case ritardo:
-                printf("Comando inserito: %s\n"
-                       "Inserire data di inizio e di fine nel formato: dd-mm-yyyy\n", comando);
                 scanf("%s %s", data1, data2);
                 datainiz = fromStringtoDate(data1);
                 datafin = fromStringtoDate(data1);
-                ritardoFunz(r, nr, datainiz, datafin);
+                if(datainiz.giorno != -1 && datafin.giorno != -1)
+                    ritardoFunz(r, nr, datainiz, datafin);
+                else
+                    printf("Inserita data non corretta o formattata male\n");
                 break;
             case ritardo_tot:
-                printf("Comando inserito: %s\nInserire codice tratta:\n", comando);
                 scanf("%s", dato);
                 ritardoTotFunz(r, nr, dato);
                 break;
             case fine:
-                printf("Comando inserito: %s\nArrivederci!", comando);
                 continua = 0;
                 break;
             default:
@@ -157,7 +148,15 @@ int leggicomando(char comando[C]){
 
 data fromStringtoDate(char str[C]){
     data form;
+    int i;
+    // gestione di caratteri diversi da '-', ad esempio '/'
+    for(i=0; i<strlen(str); i++){
+        if(!isdigit(str[i]))
+            str[i] = '-';
+    }
     sscanf(str, "%d-%d-%d", &form.giorno, &form.mese, &form.anno);
+    if(form.giorno < 1 || form.giorno > 31 || form.mese < 1 || form.mese > 12)
+        form.giorno = -1;
     return form;
 }
 
@@ -202,7 +201,6 @@ void ritardoFunz(rigaLog dati[R], int nr, data inizio, data fine){
 
 int ritardoTotFunz(rigaLog dati[R], int nr, char codice[N]){
     int i, ritardo = 0;
-    printf("%s", dati[0].codiceTratta);
     for(i=0; i<nr; i++){
         if(!strcmp(dati[i].codiceTratta, codice))
             ritardo += dati[i].ritardo;
@@ -213,7 +211,6 @@ int ritardoTotFunz(rigaLog dati[R], int nr, char codice[N]){
 
 
 void stampaRigaLog(rigaLog dati) {
-    // 345678 savona trieste 27-07-2019 18:15 22:15 23
     printf("%s %s %s %d-%d-%d %d:%d %d:%d %d\n",
            dati.codiceTratta, dati.partenza, dati.destinazione,
            dati.data.giorno, dati.data.mese, dati.data.anno,
@@ -256,4 +253,3 @@ void isInInterval(rigaLog dati[R], int nr, data inizio, data fine, int risultati
         }
     }
 }
-#pragma clang diagnostic pop

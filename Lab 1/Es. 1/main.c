@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-const int N = 30;
-const int n = 20;
-const int m = 20;
+#define N 30
+#define n 20
+#define m 20
+
 void trovaDim(char filename[N], int *nc, int *nr);
 void leggifile(char filename[N], int matrix[n][m], int nc, int nr);
 int trovaCapolista(int matrix[n][m], int nc, int nr, int k);

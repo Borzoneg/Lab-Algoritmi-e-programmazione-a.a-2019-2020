@@ -20,7 +20,7 @@ int main() {
     return 0;
 }
 
-// il vettore del numero binario è al contrario
+// il vettore del numero binario è stato girato
 void DtoB0(int dec, int bin[N]){
     int bin0[N];
     int i, j, k;

@@ -64,12 +64,12 @@ void trovaMassimi(int matrix[NC][NR], int nc, int nr, int risultati[15]) {
                     for(q=j+1; q<j+base; q++)
                         matrix[k][q] = 0;
                 }
-                area = base * alte;
+		            area = base * alte;
 
-                // tre ricerche del massimo
-                if (base > risultati[2]) {
-                    risultati[0] = i;
-                    risultati[1] = j;
+		            // tre ricerche del massimo
+		            if (base > risultati[2]) {
+		                risultati[0] = i;
+		                risultati[1] = j;
                     risultati[2] = base;
                     risultati[3] = alte;
                     risultati[4] = area;

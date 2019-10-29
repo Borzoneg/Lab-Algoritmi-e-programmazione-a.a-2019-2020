@@ -95,7 +95,8 @@ void trovaParola(char filename[N], char sequenza0[5]){
 void trovaParola2(char sequenze[N][L], char filename[N], occorrenza r[N], int nSeq){
     FILE *fp = fopen(filename, "r");
     char parola[P];
-    int i, indiceParola = 0;
+    char *apo;
+    int i, indiceParola = 0, apos = 0;
     if(fp == NULL) {
         printf("File non trovato");
         return;
@@ -105,6 +106,11 @@ void trovaParola2(char sequenze[N][L], char filename[N], occorrenza r[N], int nS
         // aumento il'indice della parola a cui mi trovo e porto la prima lettera di ogni parola a minuscolo
         indiceParola++;
         parola[0] = tolower(parola[0]);
+        // gestisco l'apostrofo
+        if((apo = (strstr(parola, "'"))) != NULL){
+            *apo = '\0';
+            apos = 1;
+        }
         // per ogni sequenza nella mia struttura dati
         for(i=0; i<nSeq; i++){
             // comparo la parola con la sequenza contenuta nel vettore di struct, se trovo una corrispondenza
@@ -118,10 +124,10 @@ void trovaParola2(char sequenze[N][L], char filename[N], occorrenza r[N], int nS
                 }
             }
         }
-        // gestisco l'apostrofo
-        if((strstr(parola, "'")) != NULL){
+        if(apos == 1)
             indiceParola++;
-        }
+        apos = 0;
     }
+
     fclose(fp);
 }
