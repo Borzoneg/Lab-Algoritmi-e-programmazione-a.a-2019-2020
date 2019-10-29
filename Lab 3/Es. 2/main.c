@@ -13,10 +13,9 @@ int main() {
     long double ald;
     int bigEndian;
 
-//    printf("Inserire un numero: ");
-//    scanf("%d", &a);
+    printf("Inserire un numero: ");
+    scanf("%lf", &a);
 
-    a = -213.78 ;
     af = (float)a;
     ad = (double)a;
     ald = (long)a;
