@@ -1,0 +1,9 @@
+//    lettOk = 0;
+//    j++;
+//    while (regexp[j] != ']') {
+//        if (src[i] == regexp[j]) {
+//            lettOk = 1;
+//            continue;
+//        }
+//        j++;
+//    }
