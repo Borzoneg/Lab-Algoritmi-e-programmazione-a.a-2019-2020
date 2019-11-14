@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 #define N 30
-#define R 1000
-#define C 20
 
 typedef  struct {
     int giorno;
@@ -28,46 +27,38 @@ typedef struct {
 } rigaLog;
 
 typedef enum{
-    stampa, Odata, Otratta, Opartenza, Ocapolinea, Rpartenza, fine
+    stampa, Odata, Otratta, Opartenza, Ocapolinea, Rpartenza, Acquisizione,fine
 }menu;
 
-
-int leggiFile(char filename[N], rigaLog dati[R]);
-int leggicomando(char comando[C]);
+rigaLog* leggiFile(char *filename, int *nr);
+int leggicomando(char *comando);
 void stampaRigaLog(rigaLog dati);
-void stampaLog(int nr, rigaLog *log[nr]);
-void ordinaPerDate(int nr, rigaLog dati[nr], rigaLog *ordinato[nr]);
-void ordinaPerPartenza(int nr, rigaLog dati[nr], rigaLog *ordinato[nr]);
-void ordinaPerCapolinea(int nr, rigaLog dati[nr], rigaLog *ordinato[nr]);
-void ordinaPertratta(int nr, rigaLog dati[nr], rigaLog *ordinato[nr]);
-void ricercaPartenza(int nr, rigaLog dati[nr], char partenza[N]);
-int ricercaDicotomica(int l, int r, rigaLog *ordinato[R], char partenza[N]);
-void bubbleSortStr(int nr, char dati[nr][N], rigaLog *ordinato[nr]);
-void inizializzaPuntatore(int nr, rigaLog dati[nr], rigaLog *punt[nr]);
-void fromDatetoString(data daConvD, orario daConvH, char converted[12]);
-void copiaOrd(int nr, rigaLog *src[nr], rigaLog *dest[nr]);
-
+void stampaLog(int nr, rigaLog **log);
+void ordinaPerDate(int nr, rigaLog *dati, rigaLog **ordinato);
+void ordinaPerPartenza(int nr, rigaLog *dati, rigaLog **ordinato);
+void ordinaPerTratta(int nr, rigaLog *dati, rigaLog **ordinato);
+void ordinaPerCapolinea(int nr, rigaLog *dati, rigaLog **ordinato);
+void ricercaPartenza(int nr, rigaLog *dati, char *partenza);
+int ricercaDicotomica(int l, int r, rigaLog **ordinato, char *partenza);
+void bubbleSortStr(int nr, char **dati, rigaLog **ordinato);
+rigaLog** inizializzaPuntatore(int nr, rigaLog dati[nr]);
+void fromDatetoString(data daConvD, orario daConvH, char *converted);
 
 int main() {
-    rigaLog r[R];
 
-    rigaLog *ordAtt[R];
-    rigaLog *ordDate[R];
-    rigaLog *ordPartenza[R];
-    rigaLog *ordCapolinea[R];
-    rigaLog *ordTratta[R];
+    rigaLog **ordAtt;
+    rigaLog **ordPartenza;
 
     menu scelta;
-    char comando[C], partstr[C];
+    char *comando = malloc(sizeof(char)*N);
+    char *partstr = malloc(sizeof(char)*N);
+
     int continua = 1, nr, ordinatoPart = 0;
 
-    nr = leggiFile("corse.txt", r);
+    rigaLog *r = leggiFile("corse.txt", &nr);
 
-    inizializzaPuntatore(nr, r, ordAtt);
-    inizializzaPuntatore(nr, r, ordDate);
-    inizializzaPuntatore(nr, r, ordTratta);
-    inizializzaPuntatore(nr, r, ordPartenza);
-    inizializzaPuntatore(nr, r, ordCapolinea);
+    ordAtt = inizializzaPuntatore(nr, r);
+    ordPartenza = inizializzaPuntatore(nr, r);
 
     while(continua){
         printf("Inserisci comando:\n"
@@ -77,6 +68,7 @@ int main() {
                "Opartenza: per odinare per partenza il database\n"
                "Odestinazione: per ordinare per destinazione il database\n"
                "Rpartenza: per ricercare una una tratta per stazione di partenza\n"
+               "Acquisizione: per importare un nuovo file\n"
                "fine: per uscire\n");
 
         scanf("%s", comando);
@@ -87,21 +79,18 @@ int main() {
                 stampaLog(nr, ordAtt);
                 break;
             case Odata:
-                ordinaPerDate(nr, r, ordDate);
-                copiaOrd(nr, ordDate, ordAtt);
+                ordinaPerDate(nr, r, ordAtt);
                 break;
             case Otratta:
-                ordinaPertratta(nr, r, ordTratta);
-                copiaOrd(nr, ordTratta, ordAtt);
+                ordinaPerTratta(nr, r, ordAtt);
                 break;
             case Opartenza:
                 ordinatoPart = 1;
                 ordinaPerPartenza(nr, r, ordPartenza);
-                copiaOrd(nr, ordPartenza, ordAtt);
+                ordAtt = ordPartenza;
                 break;
             case Ocapolinea:
-                ordinaPerCapolinea(nr, r, ordCapolinea);
-                copiaOrd(nr, ordCapolinea, ordAtt);
+                ordinaPerCapolinea(nr, r, ordAtt);
                 break;
             case Rpartenza:
                 scanf("%s", partstr);
@@ -110,7 +99,17 @@ int main() {
                 else
                     ricercaPartenza(nr, r, partstr);
                 break;
+            case Acquisizione:
+                free(r);
+                scanf("%s", partstr);
+                r = leggiFile(partstr, &nr);
+                break;
             case fine:
+                free(r);
+                free(comando);
+                free(partstr);
+                free(ordAtt);
+                free(ordPartenza);
                 printf("Arrivederci!");
                 continua = 0;
                 break;
@@ -122,16 +121,17 @@ int main() {
 }
 
 
-int leggiFile(char filename[N], rigaLog dati[R]){
-    int i, nRig;
+rigaLog* leggiFile(char filename[N], int *nr){
+    int i;
     FILE *fp = fopen(filename, "r");
     if(fp == NULL){
-        printf("File non trovato");
+        printf("File non trovato\n");
         return 0;
     }
-    fscanf(fp, "%d", &nRig);
+    fscanf(fp, "%d", nr);
+    rigaLog *dati = (rigaLog*)malloc(sizeof(rigaLog)*(*nr));
     fscanf(fp,"");
-    for(i=0; i<nRig; i++){
+    for(i=0; i<*nr; i++){
         fscanf(fp, "%s %s %s %d-%d-%d %d:%d %d:%d %d",
                dati[i].codiceTratta, dati[i].partenza, dati[i].destinazione,
                &dati[i].data.giorno, &dati[i].data.mese, &dati[i].data.anno,
@@ -139,11 +139,11 @@ int leggiFile(char filename[N], rigaLog dati[R]){
                &dati[i].ritardo);
     }
     fclose(fp);
-    return nRig;
+    return dati;
 }
 
 
-int leggicomando(char comando[C]){
+int leggicomando(char *comando){
     int i;
     for(i=0; i<strlen(comando); i++){
         comando[i] = tolower(comando[i]);
@@ -160,8 +160,10 @@ int leggicomando(char comando[C]){
         return 4;
     else if(!(strcmp(comando, "rpartenza")))
         return 5;
-    else if(!(strcmp(comando, "fine")))
+    else if(!(strcmp(comando, "acquisizione")))
         return 6;
+    else if(!(strcmp(comando, "fine")))
+        return 7;
 
     return -1;
 }
@@ -176,7 +178,7 @@ void stampaRigaLog(rigaLog dati) {
 }
 
 
-void stampaLog(int nr, rigaLog *log[nr]){
+void stampaLog(int nr, rigaLog **log){
     int i;
     printf("\n");
     for(i=0; i<nr; i++) {
@@ -186,47 +188,65 @@ void stampaLog(int nr, rigaLog *log[nr]){
 }
 
 
-void ordinaPerDate(int nr, rigaLog dati[R], rigaLog *ordinato[R]){
+void ordinaPerDate(int nr, rigaLog *dati, rigaLog **ordinato){
     int i;
-    char date[nr][N];
-
-    for(i=0; i<nr; i++)
+    char **date = malloc(sizeof(char*) * nr);
+    for(i=0; i<nr; i++) {
+        date[i] = malloc(sizeof(char*));
         fromDatetoString(dati[i].data, dati[i].oraPart, date[i]);
+    }
+    for(i=0;i<nr;i++)
+        printf("%s\n", date[i]);
     bubbleSortStr(nr, date, ordinato);
+    for(i=0; i<nr; i++)
+        free(date[i]);
+    free(date);
 }
 
 
-void ordinaPerPartenza(int nr, rigaLog dati[R], rigaLog *ordinato[R]){
+void ordinaPerPartenza(int nr, rigaLog *dati, rigaLog **ordinato){
     int i;
-    char partenze[nr][N];
-    for(i=0; i<nr; i++)
+    char **partenze = malloc(sizeof(char*)*nr);
+    for(i=0; i<nr; i++) {
+        partenze[i] = malloc(sizeof(char *));
         strcpy(partenze[i], dati[i].partenza);
-
+    }
     bubbleSortStr(nr, partenze, ordinato);
+    for(i=0; i<nr; i++)
+        free(partenze[i]);
+    free(partenze);
 }
 
 
-void ordinaPerCapolinea(int nr, rigaLog dati[R], rigaLog *ordinato[R]){
+void ordinaPerCapolinea(int nr, rigaLog *dati, rigaLog **ordinato){
     int i;
-    char destinazioni[nr][N];
+    char **capolinea = malloc(sizeof(char*) * nr);
+    for(i=0; i<nr; i++) {
+        capolinea[i] = malloc(sizeof(char *));
+        strcpy(capolinea[i], dati[i].destinazione);
+    }
+    bubbleSortStr(nr, capolinea, ordinato);
     for(i=0; i<nr; i++)
-        strcpy(destinazioni[i], dati[i].destinazione);
-
-    bubbleSortStr(nr, destinazioni, ordinato);
+        free(capolinea[i]);
+    free(capolinea);
 }
 
 
-void ordinaPertratta(int nr, rigaLog dati[R], rigaLog *ordinato[R]){
+void ordinaPerTratta(int nr, rigaLog *dati, rigaLog **ordinato){
     int i;
-    char tratta[nr][N];
-    for(i=0; i<nr; i++)
+    char **tratta = malloc(sizeof(char*) * nr);
+    for(i=0; i<nr; i++) {
+        tratta[i] = malloc(sizeof(char *));
         strcpy(tratta[i], dati[i].codiceTratta);
-
+    }
     bubbleSortStr(nr, tratta, ordinato);
+    for(i=0; i<nr; i++)
+        free(tratta[i]);
+    free(tratta);
 }
 
 
-void ricercaPartenza(int nr, rigaLog dati[R], char partenza[N]){
+void ricercaPartenza(int nr, rigaLog *dati, char *partenza){
     int i, j;
     for(i=0, j=0; i<nr; i++){
         while((tolower(partenza[j]) - tolower(dati[i].partenza[j])) == 0) {
@@ -239,26 +259,30 @@ void ricercaPartenza(int nr, rigaLog dati[R], char partenza[N]){
 }
 
 
-int ricercaDicotomica(int l, int r, rigaLog *ordinato[R], char partenza[N]){
-    int i = 0, nr = r-l;
-    //printf("%s\t%s\n", ordinato[nr/2]->partenza, partenza);
+int ricercaDicotomica(int l, int r, rigaLog **ordinato, char *partenza){
+    int nr = r-l;
+    rigaLog **trovato;
+    if(l==r)
+        return -1;
     if(strncmp(partenza, ordinato[l+nr/2]->partenza, strlen(partenza)) > 0)
         ricercaDicotomica(nr/2 +1+ l, r, ordinato, partenza);
     else if(strncmp(partenza, ordinato[nr/2]->partenza, strlen(partenza)) < 0)
         ricercaDicotomica(l, nr/2, ordinato, partenza);
     else{
-        i = l + nr/2;
-        while(strncmp(partenza, ordinato[i]->partenza, strlen(partenza)) == 0)
-            i--;
-
-        while(strncmp(partenza, ordinato[++i]->partenza, strlen(partenza)) == 0)
-            stampaRigaLog(*ordinato[i]);
+        trovato = &ordinato[l + nr/2];
+        while(strncmp(partenza, (*trovato)->partenza, strlen(partenza)) == 0)
+            trovato--;
+        trovato++;
+        while(strncmp(partenza, (*trovato)->partenza, strlen(partenza)) == 0) {
+            stampaRigaLog(**trovato);
+            trovato++;
+        }
         return nr/2;
     }
 }
 
 
-void bubbleSortStr(int nr, char dati[nr][N], rigaLog *ordinato[nr]){
+void bubbleSortStr(int nr, char **dati, rigaLog **ordinato){
     int i, j;
     char temp[N];
     rigaLog *tempP;
@@ -279,20 +303,15 @@ void bubbleSortStr(int nr, char dati[nr][N], rigaLog *ordinato[nr]){
 }
 
 
-void inizializzaPuntatore(int nr, rigaLog dati[nr], rigaLog *punt[nr]){
+rigaLog** inizializzaPuntatore(int nr, rigaLog dati[nr]){
     int i;
+    rigaLog **punt = malloc(sizeof(rigaLog*)*nr);
     for(i=0; i<nr; i++)
         punt[i] = &dati[i];
+    return punt;
 }
 
 
-void fromDatetoString(data daConvD, orario daConvH, char converted[12]){
+void fromDatetoString(data daConvD, orario daConvH, char *converted){
     sprintf(converted, "%2d%2d%4d%2d%2d", daConvD.anno, daConvD.mese, daConvD.giorno, daConvH.ore, daConvH.min);
-}
-
-
-void copiaOrd(int nr, rigaLog *src[nr], rigaLog *dest[nr]){
-    int i;
-    for(i=0; i<nr; i++)
-        dest[i] = src[i];
 }
