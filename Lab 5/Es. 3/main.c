@@ -130,7 +130,6 @@ rigaLog* leggiFile(char filename[N], int *nr){
     }
     fscanf(fp, "%d", nr);
     rigaLog *dati = (rigaLog*)malloc(sizeof(rigaLog)*(*nr));
-    fscanf(fp,"");
     for(i=0; i<*nr; i++){
         fscanf(fp, "%s %s %s %d-%d-%d %d:%d %d:%d %d",
                dati[i].codiceTratta, dati[i].partenza, dati[i].destinazione,

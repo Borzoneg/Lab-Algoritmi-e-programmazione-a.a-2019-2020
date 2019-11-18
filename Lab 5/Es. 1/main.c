@@ -9,11 +9,10 @@ typedef struct{
 }amico;
 
 amico *leggiFile(char *filename, int *nA);
-int trovaTotCanzoni(int amici, int nCanzoni[amici]);
-int creaPLaylist(int pos, amico* lista, char **sol, int nAmici, int start, int count);
+int creaPLaylist(int pos, amico* lista, char **sol, int nAmici, int count);
 
 int main() {
-    int nAmici, i, j;
+    int nAmici, i, count = 0;
     amico *r;
 
     r = leggiFile("brani.txt", &nAmici);
@@ -22,15 +21,12 @@ int main() {
     for(i=0; i<nAmici; i++){
         sol[i] = malloc(sizeof(char)*N);
     }
-//
-//    for(i=0; i<nAmici; i++){
-//        printf("%d", r[i].nBrani);
-//        for(j=0; j<r[i].nBrani; j++)
-//            printf("\n%s", r[i].canzoni[j]);
-//        printf("\n");}
-    creaPLaylist(0, r, sol, nAmici, 0, 0);
+
+    count = creaPLaylist(0, r, sol, nAmici, count);
+    printf("\nEsistono %d playlist per il file inserito\n", count);
     return 0;
 }
+
 
 amico *leggiFile(char *filename, int *nA){
     int nBrani, i, j;
@@ -50,29 +46,20 @@ amico *leggiFile(char *filename, int *nA){
     }
     return dati;
 }
-//
-//
-//int trovaTotCanzoni(int amici, int nCanzoni[amici]){
-//    int i, somma = 0;
-//    for(i=0; i<amici; i++)
-//        somma +=nCanzoni[i];
-//    return somma;
-//}
-//
 
-int creaPLaylist(int pos, amico *lista, char *sol[N], int nAmici, int start, int count){
-    int i;
+
+int creaPLaylist(int pos, amico *lista, char **sol, int nAmici, int count){
+    int i, p;
     if(pos >= nAmici){
-//        printf("Inizio playlist %d\n\n", count);
-//        for(i=0; i<nAmici; i++)
-//            printf("%s\n",sol[i]);
-//        printf("Fine playlist\n\n");
+        printf("\nInizio playlist %d\n\n", count+1);
+        for(i=0; i<nAmici; i++)
+            printf("%s\n",sol[i]);
         return count+1;
     }
-    for(i=start; i<lista[pos].nBrani; i++){
+    for(i=0; i<lista[pos].nBrani; i++){
         sol[pos] = lista[pos].canzoni[i];
-        printf("Pos: %d\tI: %d\tCanzone: %s\tnBrani: %d\n", pos, i, sol[pos], lista[pos].nBrani);
-        creaPLaylist(++pos, lista, sol, nAmici, i, count);
-    }
+        p = pos+1;
+        count = creaPLaylist(p, lista, sol, nAmici, count);
+        }
     return count;
 }

@@ -130,7 +130,6 @@ int leggiFile(char filename[N], rigaLog dati[R]){
         return 0;
     }
     fscanf(fp, "%d", &nRig);
-    fscanf(fp,"");
     for(i=0; i<nRig; i++){
         fscanf(fp, "%s %s %s %d-%d-%d %d:%d %d:%d %d",
                dati[i].codiceTratta, dati[i].partenza, dati[i].destinazione,
