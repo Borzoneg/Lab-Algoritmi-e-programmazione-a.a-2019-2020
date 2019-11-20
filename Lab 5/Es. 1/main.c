@@ -12,18 +12,24 @@ amico *leggiFile(char *filename, int *nA);
 int creaPLaylist(int pos, amico* lista, char **sol, int nAmici, int count);
 
 int main() {
-    int nAmici, i, count = 0;
-    amico *r;
+    int nAmici, i, j, count = 0;
+    amico *lista;
 
-    r = leggiFile("brani.txt", &nAmici);
+    lista = leggiFile("brani.txt", &nAmici);
 
     char** sol= malloc(sizeof(char*)*nAmici);
     for(i=0; i<nAmici; i++){
         sol[i] = malloc(sizeof(char)*N);
     }
 
-    count = creaPLaylist(0, r, sol, nAmici, count);
+    count = creaPLaylist(0, lista, sol, nAmici, count);
     printf("\nEsistono %d playlist per il file inserito\n", count);
+
+    for(i=0; i<nAmici; i++){
+        for(j=0; j < lista[i].nBrani; j++)
+            free(lista[i].canzoni[j]);
+    }
+    free(lista);
     return 0;
 }
 

@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #define N 30
 
@@ -312,5 +312,5 @@ rigaLog** inizializzaPuntatore(int nr, rigaLog dati[nr]){
 
 
 void fromDatetoString(data daConvD, orario daConvH, char *converted){
-    sprintf(converted, "%2d%2d%4d%2d%2d", daConvD.anno, daConvD.mese, daConvD.giorno, daConvH.ore, daConvH.min);
+    sprintf(converted, "%4d%2d%2d%2d%2d", daConvD.anno, daConvD.mese, daConvD.giorno, daConvH.ore, daConvH.min);
 }

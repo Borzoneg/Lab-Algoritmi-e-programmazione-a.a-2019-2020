@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/media/guglielmo/9E7B-0448/Programmazione/C/Algoritmi-e-programmazione-a.a-2019-2020/Lab 5/Es. 3/main.c
-string.h
--
-ctype.h
+/media/guglielmo/9E7B-0448/Programmazione/C/Algoritmi-e-programmazione-a.a-2019-2020/Lab 6/Es. 2/main.c
+stdio.h
 -
 stdlib.h
 -
-stdio.h
+string.h
 -
 
