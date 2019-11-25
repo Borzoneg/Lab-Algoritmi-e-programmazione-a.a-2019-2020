@@ -11,7 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f423ad89-f5ef-4ff2-b14b-be45750a18f0" name="Default Changelist" comment="" />
+    <list default="true" id="f423ad89-f5ef-4ff2-b14b-be45750a18f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Es. 2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Es. 2/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/Es__2" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/Es__2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/main.c" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +37,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Es. 5" />
     <property name="settings.editor.selected.configurable" value="language.cpp.clangd" />
   </component>
   <component name="RunDashboard">
@@ -62,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572897381095</updated>
       <workItem from="1572897383535" duration="4847000" />
+      <workItem from="1574629094930" duration="1042000" />
     </task>
     <servers />
   </component>
@@ -73,7 +82,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -59,7 +59,7 @@ int main() {
 
     menu scelta;
     char comando[C], partstr[C];
-    int continua = 1, nr, ordinatoPart = 0;
+    int continua = 1, nr, ordinatoPart = 0, ordinatoCap = 0, ordinatoTratta = 0, ordinatoData = 0;
 
     nr = leggiFile("corse.txt", r);
 
@@ -87,20 +87,31 @@ int main() {
                 stampaLog(nr, ordAtt);
                 break;
             case Odata:
-                ordinaPerDate(nr, r, ordDate);
+                if(!ordinatoData) {
+                    ordinaPerDate(nr, r, ordDate);
+                    ordinatoData = 1;
+                }
                 copiaOrd(nr, ordDate, ordAtt);
                 break;
             case Otratta:
-                ordinaPertratta(nr, r, ordTratta);
+                if(!ordinatoTratta) {
+                    ordinaPertratta(nr, r, ordTratta);
+                    ordinatoTratta = 1;
+                }
                 copiaOrd(nr, ordTratta, ordAtt);
                 break;
             case Opartenza:
-                ordinatoPart = 1;
-                ordinaPerPartenza(nr, r, ordPartenza);
+                if(!ordinatoPart) {
+                    ordinaPerPartenza(nr, r, ordPartenza);
+                    ordinatoPart = 1;
+                }
                 copiaOrd(nr, ordPartenza, ordAtt);
                 break;
             case Ocapolinea:
-                ordinaPerCapolinea(nr, r, ordCapolinea);
+                if(!ordinatoCap) {
+                    ordinaPerCapolinea(nr, r, ordCapolinea);
+                    ordinatoCap = 1;
+                }
                 copiaOrd(nr, ordCapolinea, ordAtt);
                 break;
             case Rpartenza:
@@ -127,7 +138,7 @@ int leggiFile(char filename[N], rigaLog dati[R]){
     FILE *fp = fopen(filename, "r");
     if(fp == NULL){
         printf("File non trovato");
-        return 0;
+        exit(1);
     }
     fscanf(fp, "%d", &nRig);
     for(i=0; i<nRig; i++){
@@ -187,10 +198,12 @@ void stampaLog(int nr, rigaLog *log[nr]){
 
 void ordinaPerDate(int nr, rigaLog dati[R], rigaLog *ordinato[R]){
     int i;
+    // creo una matrice di date (o di partenza, tratte o destinazioni)
     char date[nr][N];
-
+    // inizializzo la matrice
     for(i=0; i<nr; i++)
         fromDatetoString(dati[i].data, dati[i].oraPart, date[i]);
+    // uso il bubbleSort per ordinare un vettore di puntatori a struct in base alla matrice di date (o di partenza, tratte o destinazioni)
     bubbleSortStr(nr, date, ordinato);
 }
 
@@ -240,7 +253,6 @@ void ricercaPartenza(int nr, rigaLog dati[R], char partenza[N]){
 
 int ricercaDicotomica(int l, int r, rigaLog *ordinato[R], char partenza[N]){
     int i = 0, nr = r-l;
-    //printf("%s\t%s\n", ordinato[nr/2]->partenza, partenza);
     if(strncmp(partenza, ordinato[l+nr/2]->partenza, strlen(partenza)) > 0)
         ricercaDicotomica(nr/2 +1+ l, r, ordinato, partenza);
     else if(strncmp(partenza, ordinato[nr/2]->partenza, strlen(partenza)) < 0)
@@ -258,12 +270,12 @@ int ricercaDicotomica(int l, int r, rigaLog *ordinato[R], char partenza[N]){
 
 
 void bubbleSortStr(int nr, char dati[nr][N], rigaLog *ordinato[nr]){
+    // BubbleSort per le stringhe
     int i, j;
     char temp[N];
     rigaLog *tempP;
     for (i = 0; i < nr; i++) {
         for (j = 0; j < nr - i - 1; j++) {
-            //Scambio valori
             if(strcmp(dati[j], dati[j+1]) > 0){
                 strcpy(temp, dati[j]);
                 strcpy(dati[j], dati[j+1]);

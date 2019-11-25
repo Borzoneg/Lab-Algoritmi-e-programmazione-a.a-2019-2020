@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #define N 255
 
+// struct definita per ogni amico, in cui metto un intero che è il numero di canzoni dell'amico e un vettore di stringhe
+// per le canzoni
 typedef struct{
     int nBrani;
     char **canzoni;
@@ -37,25 +39,31 @@ int main() {
 amico *leggiFile(char *filename, int *nA){
     int nBrani, i, j;
     FILE *fp = fopen(filename, "r");
-    if(fp==NULL)
-        exit(2);
+    if(fp==NULL){
+        printf("File non trovato");
+        exit(1);
+    }
     fscanf(fp, "%d", nA);
+    // alloco spazio per creare un vettore di struct amico che sarà lungo tanto quanto il numero di amici
     amico *dati = malloc(sizeof(amico) * (*nA));
     for(i=0; i < *nA; i++){
         fscanf(fp, "%d", &nBrani);
         dati[i].nBrani = nBrani;
+        // per ogni amico, alloco tanti puntatori a char per il numero di brani
         dati[i].canzoni = malloc(sizeof(char*) * nBrani);
         for(j=0; j<nBrani; j++) {
+            // per ogni rano alloco un numero di char per il numero massimo di caratteri
             dati[i].canzoni[j] = malloc(sizeof(char)*N);
             fscanf(fp, "%s", dati[i].canzoni[j]);
         }
     }
+	fclose(fp);
     return dati;
 }
 
-
+// utilizzo il codice del principio di moltiplicazione per visitare ogni soluzione adattando il codice al caso dei brani
 int creaPLaylist(int pos, amico *lista, char **sol, int nAmici, int count){
-    int i, p;
+    int i;
     if(pos >= nAmici){
         printf("\nInizio playlist %d\n\n", count+1);
         for(i=0; i<nAmici; i++)
@@ -64,8 +72,7 @@ int creaPLaylist(int pos, amico *lista, char **sol, int nAmici, int count){
     }
     for(i=0; i<lista[pos].nBrani; i++){
         sol[pos] = lista[pos].canzoni[i];
-        p = pos+1;
-        count = creaPLaylist(p, lista, sol, nAmici, count);
+        count = creaPLaylist(pos+1, lista, sol, nAmici, count);
         }
     return count;
 }

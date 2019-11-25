@@ -45,20 +45,29 @@ rigaLog** inizializzaPuntatore(int nr, rigaLog dati[nr]);
 void fromDatetoString(data daConvD, orario daConvH, char *converted);
 
 int main() {
-
+    // Vettori di puntatori a strutture di tipo rigalog per ogni ordinamento e per l'ordinamento attuale nel programma
     rigaLog **ordAtt;
     rigaLog **ordPartenza;
+    rigaLog **ordCapolinea;
+    rigaLog **ordTratta;
+    rigaLog **ordData;
+
 
     menu scelta;
     char *comando = malloc(sizeof(char)*N);
     char *partstr = malloc(sizeof(char)*N);
 
-    int continua = 1, nr, ordinatoPart = 0;
+    // ordinatox è un flag che mi dice se ho o meno già il vettore di puntatori dell'ordinamento x per non ripetere la
+    // funzione
+    int continua = 1, nr, ordinatoPart = 0, ordinatoCap = 0, ordinatoTratta = 0, ordinatoData = 0;
 
     rigaLog *r = leggiFile("corse.txt", &nr);
 
     ordAtt = inizializzaPuntatore(nr, r);
     ordPartenza = inizializzaPuntatore(nr, r);
+    ordCapolinea = inizializzaPuntatore(nr, r);
+    ordTratta = inizializzaPuntatore(nr, r);
+    ordData = inizializzaPuntatore(nr, r);
 
     while(continua){
         printf("Inserisci comando:\n"
@@ -66,7 +75,7 @@ int main() {
                "Odata: per odinare per data il database\n"
                "Otratta: per odinare per tratta il database\n"
                "Opartenza: per odinare per partenza il database\n"
-               "Odestinazione: per ordinare per destinazione il database\n"
+               "Ocapolinea: per ordinare per destinazione il database\n"
                "Rpartenza: per ricercare una una tratta per stazione di partenza\n"
                "Acquisizione: per importare un nuovo file\n"
                "fine: per uscire\n");
@@ -79,18 +88,32 @@ int main() {
                 stampaLog(nr, ordAtt);
                 break;
             case Odata:
-                ordinaPerDate(nr, r, ordAtt);
+                if(!ordinatoData) {
+                    ordinaPerDate(nr, r, ordData);
+                    ordinatoData = 1;
+                }
+                ordAtt = ordData;
                 break;
             case Otratta:
-                ordinaPerTratta(nr, r, ordAtt);
+                if(!ordinatoTratta) {
+                    ordinaPerTratta(nr, r, ordTratta);
+                    ordinatoTratta = 1;
+                }
+                ordAtt = ordTratta;
                 break;
             case Opartenza:
-                ordinatoPart = 1;
-                ordinaPerPartenza(nr, r, ordPartenza);
+                if(!ordinatoPart) {
+                    ordinaPerPartenza(nr, r, ordPartenza);
+                    ordinatoPart = 1;
+                }
                 ordAtt = ordPartenza;
                 break;
             case Ocapolinea:
-                ordinaPerCapolinea(nr, r, ordAtt);
+                if(!ordinatoCap) {
+                    ordinaPerCapolinea(nr, r, ordCapolinea);
+                    ordinatoCap = 1;
+                }
+                ordAtt = ordCapolinea;
                 break;
             case Rpartenza:
                 scanf("%s", partstr);
@@ -101,6 +124,11 @@ int main() {
                 break;
             case Acquisizione:
                 free(r);
+                free(ordAtt);
+                free(ordPartenza);
+                free(ordData);
+                free(ordTratta);
+                free(ordCapolinea);
                 scanf("%s", partstr);
                 r = leggiFile(partstr, &nr);
                 break;
@@ -126,7 +154,7 @@ rigaLog* leggiFile(char filename[N], int *nr){
     FILE *fp = fopen(filename, "r");
     if(fp == NULL){
         printf("File non trovato\n");
-        return 0;
+        exit(1);
     }
     fscanf(fp, "%d", nr);
     rigaLog *dati = (rigaLog*)malloc(sizeof(rigaLog)*(*nr));
@@ -194,8 +222,6 @@ void ordinaPerDate(int nr, rigaLog *dati, rigaLog **ordinato){
         date[i] = malloc(sizeof(char*));
         fromDatetoString(dati[i].data, dati[i].oraPart, date[i]);
     }
-    for(i=0;i<nr;i++)
-        printf("%s\n", date[i]);
     bubbleSortStr(nr, date, ordinato);
     for(i=0; i<nr; i++)
         free(date[i]);

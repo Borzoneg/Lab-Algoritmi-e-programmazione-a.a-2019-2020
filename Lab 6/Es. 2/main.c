@@ -1,17 +1,7 @@
-// TODO:
-//          -cancellazione (con estrazione del dato) di un elemento dalla lista, previa ricerca per codice
-//          -cancellazione (con estrazione del dato) di tutti gli elementi con date comprese tra 2 date lette da tastiera.
-//              Si consiglia, anziché di realizzare una funzione che cancelli dalla lista questi
-//              elementi, restituendoli memorizzati in una lista o in un vettore dinamico, di implementare
-//              una funzione che estragga e restituisca al programma chiamante il primo degli elementi
-//              appartenenti all’intervallo. Il programma chiamante itererà la chiamata di questa funzione,
-//              stampando il risultato, per tutti gli elementi dell’intervallo
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define N 50
 
@@ -41,54 +31,20 @@ anagrafica ricercaPerCodice(link head, char* codice);
 void stampaElemento(anagrafica elemento);
 void stampaSuFile(link head, char *filename);
 anagrafica rimuoviPerCodice(link *head, char* codice);
-anagrafica rimuoviperDate(link *head, char *dataIniz, char *dataFin, int inInt);
-anagrafica trovaPreInizio(link head, char *dataIniz);
-anagrafica trovaFine(link inizio,  char *dataFin);
+link rimuoviperDate(link *head, char *dataIniz, char *dataFin);
+link trovaTroppoGiovane(link head, char *dataFin);
+link trovaUltimo(link head, char *dataIniz);
+void libera (link head);
 
 
 int main() {
     int continua = 1, com;
     char *comando = malloc(sizeof(char)*10);
     char *dato, *dato2;
-    link i, head = NULL;
+    link head = NULL, eliminati;
     anagrafica elemento;
-
-    // TEST
-    anagrafica el, el2, el3, el4, el5, el6, el7;
-    el = riempiCampi("A0000", "Alfredo", "Bici",
-            "24/04/1999", "Pontedassio", "PontedassioRue", 0);
-    el2 = riempiCampi("A0001", "Simone", "Clemenzi",
-            "24/06/1999", "Pontedassio", "PontedassioRue", 1);
-    el3 = riempiCampi("A0002", "Giuseppe", "Bruzzone",
-            "05/04/1999", "Imperia", "Stradadefrancesi", 2);
-    el4 = riempiCampi("A0003", "Valerio", "Carrivale",
-            "20/08/1999", "cascione", "imperia", 3);
-
-    head = aggiungiElemento(head, &el);
-    head = aggiungiElemento(head, &el2);
-    head = aggiungiElemento(head, &el3);
-    head = aggiungiElemento(head, &el4);
-    head = leggiFile("pazienti", head);
-//
-//    for(i=head; i!=NULL; i=i->next)
-//        stampaElemento(*i);
-//
-//    printf("\n\n");
-//
-    for(i=head; i!=NULL; i=i->next)
-        stampaElemento(*i);
-    printf("%d\n", strcmp("1999/06/25","1999/07/02"));
-    anagrafica p  = rimuoviperDate(&head, "23/04/1999", "25/06/1999", 0);
-
-    for(i=&p; i!=NULL; i=i->next)
-        stampaElemento(*i);
-
-
-    continua = 0;
-    //FINE TEST
-
     while (continua){
-        printf("Benvenuto, inserisci un comando per continuare:\n"
+        printf("Inserisci un comando per continuare:\n"
                "Aggiungi: aggiungi un elemento campo per campo\n"
                "File: aggiungi tutti gli elementi all'interno di un file\n"
                "Stampa: stampa la lista su file\n"
@@ -117,6 +73,8 @@ int main() {
                 printf("Inserire nome file:\n");
                 scanf("%s", dato);
                 head = leggiFile(dato, head);
+                if(head == NULL)
+                    printf("Lettura non riuscita, controllare nome del file\n");
                 free(dato);
                 break;
             case stampa:
@@ -143,8 +101,9 @@ int main() {
                 scanf("%s", dato);
                 elemento = rimuoviPerCodice(&head, dato);
                 if(elemento.cap>0){
-                stampaElemento(elemento);
-                printf("e' stato eliminato\n");
+                    stampaElemento(elemento);
+                    printf("e' stato eliminato\n");
+                    libera(&elemento);
                 }
                 else
                     printf("L'elemento non e' presente in lista\n");
@@ -153,17 +112,25 @@ int main() {
             case rmdate:
                 dato = malloc(sizeof(char)* 12);
                 dato2 = malloc(sizeof(char)* 12);
-                printf("Inserire le due date separate da uno spazio nella forma: gg/mm/yyyy");
+                printf("Inserire le due date separate da uno spazio nella forma: gg/mm/yyyy\n");
                 scanf("%s %s", dato, dato2);
-                printf("NON IMPLEMENTATA");
+                eliminati = rimuoviperDate(&head, dato, dato2);
+                if(eliminati == NULL)
+                    printf("Nessun elemento nell'intervallo");
+                else {
+                    printf("Elementi eliminati:\n");
+                    stampaSuFile(eliminati, "console");
+                    libera(eliminati);
+                }
                 break;
             case fine:
                 printf("Arrivederci!");
                 free(comando);
                 continua = 0;
+                libera(head);
                 break;
             default:
-                printf("Comando inserito non riconosciuto, prego riprovare");
+                printf("Comando inserito non riconosciuto, prego riprovare\n");
         }
     }
     return 0;
@@ -195,18 +162,21 @@ link aggiungiElemento(link head, link elemento){
     link i, tmp;
     char *dataGirEl, *dataGir;
 
+    // se la lista è nulla la testa della lista diverrà il nuovo elemento
     if(head == NULL)
         return elemento;
 
     dataGir = giraData(head->dataNasc);
     dataGirEl = giraData(elemento->dataNasc);
 
+    // gestisco il caso in cui la head sia da mettere sotto l'elemento nuovo
     if(strcmp(dataGir, dataGirEl)< 0){
         tmp = head;
         head = elemento;
         elemento->next = tmp;
         return head;
     }
+    // altrimenti itero per trovare la giusta posizione del nuovo elemento
     for(i=head; i->next != NULL; i = i->next){
         dataGir = giraData(i->next->dataNasc);
         if(strcmp(dataGir, dataGirEl) < 0){
@@ -217,6 +187,8 @@ link aggiungiElemento(link head, link elemento){
         }
 
     }
+    // se sono arrivato fin qui senza uscire da uno delle terminazioni superiori allora l'elemento sarà da mettere
+    // al fondo della lista
     i->next = elemento;
     return head;
 }
@@ -229,6 +201,7 @@ link leggiFile(char *filename, link head){
         return NULL;
     }
 
+    // alloco le stringhe e il link in modo che rimangano nell'heap e non si perdano nel return al main
     char *codice = malloc(sizeof(char)*N);
     char *nome = malloc(sizeof(char)*N);
     char *cognome = malloc(sizeof(char)*N);
@@ -236,6 +209,7 @@ link leggiFile(char *filename, link head){
     char *via = malloc(sizeof(char)*N);
     char *citta = malloc(sizeof(char)*N);
     int cap;
+    // per ogni elemento nella lista utilizzo la funzione di aggiunta singola
     while(fscanf(fp, "%s %s %s %s %s %s %d", codice, nome, cognome, dataNasc, via, citta, &cap) == 7){
         link newElement = malloc(sizeof(char)*N*6 + sizeof(int) + sizeof(link));
         *newElement = riempiCampi(codice, nome, cognome, dataNasc, via, citta, cap);
@@ -255,9 +229,6 @@ anagrafica ricercaPerCodice(link head, char* codice){
 }
 
 
-
-
-
 void stampaElemento(anagrafica elemento){
     printf("%s %s %s %s %s %s %d\n", elemento.codice, elemento.nome, elemento.cognome,
             elemento.dataNasc, elemento.via, elemento.citta, elemento.cap);
@@ -267,62 +238,119 @@ void stampaElemento(anagrafica elemento){
 
 void stampaSuFile(link head, char *filename){
     link i;
-    FILE *fp = fopen(filename, "w");
-    for(i=head; i!=NULL; i=i->next)
-        fprintf(fp, "%s %s %s %s %s %s %d\n", i->codice, i->nome, i->cognome,
-                i->dataNasc, i->via, i->citta, i->cap);
+    if(!strcmp(filename, "console")){
+        for(i=head; i!=NULL; i=i->next)
+            fprintf(stdout, "%s %s %s %s %s %s %d\n", i->codice, i->nome, i->cognome,
+                    i->dataNasc, i->via, i->citta, i->cap);
+    }
+    else {
+        FILE *fp = fopen(filename, "w");
+        for (i = head; i != NULL; i = i->next)
+            fprintf(fp, "%s %s %s %s %s %s %d\n", i->codice, i->nome, i->cognome,
+                    i->dataNasc, i->via, i->citta, i->cap);
+        fclose(fp);
+    }
+
 }
 
 
 anagrafica rimuoviPerCodice(link *head, char* codice){
     link i, tmp;
+    // gestisco il caso in cui la head sia l'elemento cercato
     if(!(strcmp((*head)->codice,codice))){
         tmp = *head;
         *head = (*head)->next;
+        tmp->next = NULL;
         return *tmp;
     }
+    // altrimenti vado avanti con un for per ogni elemento della lista fino a trovare l'elemento che mi serve e lo ritorno
     for(i=(*head); i->next != NULL; i= i->next){
         if(!strcmp(i->next->codice, codice)) {
             tmp = i->next;
             i->next = i->next->next;
+            tmp->next =NULL;
             return *tmp;
         }
     }
+    // altrimenti ritorno una struct nulla
     return (riempiCampi("AXXXX", "NA", "NA", "gg/mm/yyyy", "NA", "NA", -1));
 }
 
 
-anagrafica rimuoviperDate(link *head, char *dataIniz, char *dataFin, int inInt){
-    anagrafica preElementoIniziale;
-    char* dataInizGir = giraData(dataIniz);
-    char* dataFinGir = giraData(dataFin);
-    // Prima trovo la fine perchè essendo la lista ordinata dal più giovanee al più vecchio sarà più in alto la
-    // data finale che la data iniziale
-    preElementoIniziale = trovaPreInizio(*head, dataInizGir);
-    anagrafica elementoFinale = trovaFine(preElementoIniziale.next, dataFinGir);
-    preElementoIniziale.next = elementoFinale.next;
-    elementoFinale.next = NULL;
-    return *(preElementoIniziale.next);
+link rimuoviperDate(link *head, char *dataIniz, char *dataFin){
+    link tmp = NULL, troppoGiovane;
+    // trovo l'ultimo compreso nell'intervallo
+    link ultimo = trovaUltimo((*head), giraData(dataIniz));
+    // se head è nell'intervallo inizializzo tmp
+    // e cambio head perchè diventi il successivo all'ultimo elemento da eliminare
+    if (strcmp(giraData(dataFin), giraData((*head)->dataNasc)) >= 0) {
+        tmp = *head;
+        *head = ultimo->next;
+    }
+        // altrimenti trovo l'elemento troppo giovane per stare nell'intervallo, che mi servirà per metter il suo
+        // campo next al primo elmento troppo vecchio per stare in intervallo
+    else {
+        troppoGiovane = trovaTroppoGiovane((*head), giraData(dataFin));
+    }
+    // se siamo nel caso in cui head sia all'interno dell'intervallo allora salto altrimenti entro in questo caso
+    if (tmp == NULL) {
+        // salvo il valore del più giovane nell'intervallo che è quello dopo il "troppo giovane"
+        tmp = troppoGiovane->next;
+        // ora quello troppo giovane punta a quello troppo vecchio
+        troppoGiovane->next = ultimo->next;
+    }
+    // nel caso in cui ultimo e troppogiovane siano uguali (lo vediamo dalla chiave univoca) non devo eliminare niente
+    if(ultimo->codice != NULL && !strcmp(troppoGiovane->codice, ultimo->codice))
+        return NULL;
+
+    // infine il campo next dell'ultimo diventa nullo, per poter stampare correttamente gli elementi eliminati
+    ultimo->next = NULL;
+    // ritorno tmp che è l'elemento più giovane tra quelli eliminati
+    return tmp;
 }
 
 
-anagrafica trovaPreInizio(link head, char *dataIniz){
-    if(strcmp(dataIniz,giraData(head->dataNasc)) <= 0)
-        return (*head);
-    anagrafica preElementoIniziale = trovaPreInizio(head->next, dataIniz);
-    return (riempiCampi("AXXXX", "NA", "NA", "gg/mm/yyyy", "NA", "NA", -1));
+link trovaTroppoGiovane(link head, char *dataFin){
+    if(head==NULL)
+        return NULL;
+    if(strcmp(dataFin, giraData(head->next->dataNasc)) >= 0)
+        return head;
+    link troppoGiovane = trovaTroppoGiovane(head->next, dataFin);
+    return troppoGiovane;
 }
 
 
-anagrafica trovaFine(link inizio,  char *dataFin){
-    printf("%s %s %d", dataFin, giraData(inizio->next->dataNasc), strcmp(dataFin,giraData(inizio->next->dataNasc)));
-    if(strcmp(dataFin,giraData(inizio->next->dataNasc)) <= 0)
-        return (*inizio);
-    anagrafica elementoFin = trovaFine(inizio->next, dataFin);
-    return (riempiCampi("AXXXX", "NA", "NA", "gg/mm/yyyy", "NA", "NA", -1));
+link trovaUltimo(link head, char *dataIniz){
+    if(head->next==NULL)
+        return NULL;
+    if(strcmp(dataIniz, giraData(head->next->dataNasc)) >= 0)
+        return head;
+    link ultimo = trovaUltimo(head->next, dataIniz);
+    if(ultimo==NULL){
+        anagrafica p = riempiCampi("AXXXX", "NA", "NA", "gg/mm/yyyy", "NA", "NA", -1);
+        ultimo = &p;
+    }
+    return ultimo;
 }
+
+
+void libera (link head){
+    link i;
+    for(i=head; i!=NULL; i=i->next){
+        free(i->codice);
+        free(i->nome);
+        free(i->cognome);
+        free(i->via);
+        free(i->citta);
+        free(i->dataNasc);
+    }
+}
+
 
 int leggicomdando(char*comando){
+    int i;
+    for(i=0; i<strlen(comando); i++)
+        comando[i] = tolower(comando[i]);
     if(!strcmp(comando, "aggiungi"))
         return 0;
     if(!strcmp(comando, "file"))
@@ -339,6 +367,7 @@ int leggicomdando(char*comando){
         return 6;
     return -1;
 }
+
 
 char *giraData(char *data){
     int giorno, mese, anno;

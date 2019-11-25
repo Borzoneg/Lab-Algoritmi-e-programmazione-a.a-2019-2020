@@ -25,11 +25,16 @@ ramo* leggiFile(char *filename, int *nNodi, int *nRami){
     int i;
     ramo *listaRami;
     FILE *fp = fopen(filename, "r");
+	if(fp==NULL){
+		printf("file non trovato");
+		exit(1);
+	}
     fscanf(fp, "%d %d", nNodi, nRami);
     listaRami = malloc(sizeof(ramo*) * (*nRami));
     for(i=0; i < *nRami; i++){
         fscanf(fp, "%d %d", &listaRami[i].src, &listaRami[i].dest);
     }
+	fclose(fp);
     return listaRami;
 }
 
@@ -42,25 +47,29 @@ int checkSolution(int pos, ramo* listaRami, int nRami, int *sol){
 
     for(i=0; i<pos; i++){
         for(j=0; j<nRami; j++){
+            // se l'elemento i del vettore soluzione è la destinazione del ramo j allora il ramo copre il ramo j
             if(sol[i] == listaRami[j].dest && !check[j]){
                     ramiCov++;
                     check[j] = 1;
             }
+            // o la src
             if(sol[i] == listaRami[j].src && !check[j]){
                 ramiCov++;
                 check[j] = 1;
             }
         }
     }
+    // se tutti i rami sono coperti allora la soluzione è valida
     if(ramiCov >= nRami)
         return 1;
     return 0;
 }
 
-
+// esploro tutti i possibili powerset nell'insieme dei nodi
 int powerSet(int pos, int *sol, int k, int start, int count, ramo* listaRami, int nRami){
     int i;
     if(start>=k) {
+        // quando trovo un sottoinsieme lo controllo
         if(checkSolution(pos, listaRami, nRami, sol)) {
             for (i = 0; i < pos; i++)
                 printf("%d\t", sol[i]);
