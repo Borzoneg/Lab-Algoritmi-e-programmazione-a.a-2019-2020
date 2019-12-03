@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define N 9
+#include <time.h>
+
+#define N 12
 #define P 4
 
 // zaffiri, smeraldi, rubini, topazi
@@ -9,48 +11,45 @@ typedef struct{
     int codicePietra;
     int n;
 }pietra;
-
-//5 7 4 10
 int disposizioniConRip(int pos, pietra *val, int *sol, int n, int k, int maxLenght, int *rip, int *bestSol);
 pietra *generaDati(int *nPietre);
 int checkSolution(int *sol, int lenght);
 
 int main() {
-    int i;
-    char *names[N] = {"Zaffiro", "Smeraldo", "Rubino", "Topazio"};
-    int sol [9], bestSol[9];
-    int rip[4] = {0};
-
-    //TEST//
-    int a[4] = {5, 7, 4, 10};
-    pietra *dati = generaDati(a);
-    int somma = a[0] + a[1] + a[2] + a[3];
-    //FINE TEST//
-
-
-    int c = disposizioniConRip(0, dati, sol, P, somma, 0, rip, bestSol);
-
-    printf("%d\t", c);
-    for (i = 0; i < c; i++)
-        printf("%s   ", names[bestSol[i]]);
-    printf("\n");
+    int i, c;
+    int rip[P] = {0};
+    int a[P];
+    FILE *fp = fopen("e1_easy_test_set.txt", "r");
+    int nrig;
+    fscanf(fp, "%d", &nrig);
+    nrig = 1;
+    for(i=0; i<nrig; i++) {
+        //fscanf(fp, "%d %d %d %d", &a[0], &a[2], &a[3], &a[1]);
+        sscanf("10 10 9 10", "%d %d %d %d",&a[0], &a[2], &a[3], &a[1]);
+        pietra *dati = generaDati(a);
+        int somma = a[0] + a[1] + a[2] + a[3];
+        int sol[somma], bestSol[somma];
+        c = disposizioniConRip(0, dati, sol, P, somma, 0, rip, bestSol);
+        printf("Lunghezza: %d\n", c);
+    }
+//    printf("\nTempo speso: %f[s]", (double)(end - begin) / CLOCKS_PER_SEC);
     return 0;
 }
 
 
 int disposizioniConRip(int pos, pietra *val, int *sol, int n, int k, int maxLenght, int *rip, int *bestSol){
-    int i;
-    if (pos>0 && checkSolution(sol, pos)) {
+    int i, pruning=1;
+    if (pos>0 && (pruning = checkSolution(sol, pos))) {
         if(pos>maxLenght){
             maxLenght = pos;
             for(i=0; i<pos; i++)
                 bestSol[i] = sol[i];
-            for(; i<k; i++);
-            bestSol[i]= -1;
         }
     }
+    if(!pruning)
+        return maxLenght;
     if(pos>=k)
-            return maxLenght;
+        return maxLenght;
     for(i=0; i<n; i++){
         if(rip[i]+1 <= val[i].n){
             sol[pos] = val[i].codicePietra;

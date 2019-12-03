@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Es__3.dir/main.c.o"
-  "Es__3"
+  "CMakeFiles/Es__3.dir/main.c.obj"
+  "Es__3.exe"
+  "Es__3.exe.manifest"
   "Es__3.pdb"
+  "libEs__3.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
