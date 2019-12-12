@@ -1,7 +1,4 @@
-// START:   16:30
-// FINE:    17:30
-// ho nrig*2 possibili caselle da piazzare in ordine diverso, quindi uso le disposizioni semplici poiché non si ripetono
-// i valori.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,18 +25,26 @@ typedef struct{
 }datiBase;
 
 int trovaValMax(char *filename1, char *filename2);
-int disposizioniSempl(datiBase base, tubi *dati, int nc, int nr, casella **bestSol);
-int contaVal(casella **sol, tubi *dati, int nc, int nr, int nTubi);
+int disposizioniSempl(datiBase base, tubi *dati, int nc, int nr, casella *bestSol, casella **board);
+int contaVal(casella *sol, tubi *dati, int nc, int nr, int nTubi, casella **boardIniz, int k);
 casella *generaListaCaselle(int nrig);
 
 int main() {
+    trovaValMax("tiles.txt", "board.txt");
+    return 0;
+}
+
+
+int trovaValMax(char *filename1, char *filename2){
+
     int nrig, i, j, maxPoints, nr, nc, caselleFisse = 0, postiLiberi;
-    FILE *fp = fopen("tiles.txt", "r");
-    FILE *fd = fopen("board.txt", "r");
+    FILE *fp = fopen(filename1, "r");
+    FILE *fd = fopen(filename2, "r");
     // lettura del file delle caselle
     fscanf(fp, "%d", &nrig);
     fscanf(fp, "\n");
     casella* listaCaselle = generaListaCaselle(nrig);
+    casella* bestSol = malloc(sizeof(casella)*nrig*2);
     tubi *dati = malloc(sizeof(tubi) * nrig * 2);
     for(i=0; i<nrig; i++){
         fscanf(fp,"%c %d %c %d\n", &dati[i].coloreT1, &dati[i].valoreT1, &dati[i].coloreT2, &dati[i].valoreT2);
@@ -52,7 +57,7 @@ int main() {
     // lettura del file della board
     fscanf(fd, "%d %d", &nr, &nc);
     casella** tabella = malloc(sizeof(casella) * nr);
-    casella** bestSol = malloc(sizeof(casella)*nr);
+
     for(i=0; i<nr; i++){
         tabella[i] = malloc(sizeof(casella) * nc);
         for(j=0; j<nc; j++){
@@ -65,15 +70,10 @@ int main() {
     fclose(fp);
     // determino le posizioni da riempire su cui devo lavoare con le disposizioni
     postiLiberi = (nr * nc) - caselleFisse;
-    int *mark = malloc(sizeof(int)*postiLiberi);
-    for(i=0; i<postiLiberi; i++)
+    int *mark = malloc(sizeof(int)*nrig*2);
+    for(i=0; i<nrig*2; i++)
         mark[i] = 0;
 
-//    for(i=0; i<3; i++){
-//        for(j=0; j<3; j++)
-//            printf(" %d %d", tabella[i][j].indice, tabella[i][j].ruotata);
-//        printf("\n");
-//    }
     casella *sol = malloc(sizeof(casella)*postiLiberi);
     datiBase base;
     base.pos = 0;
@@ -83,37 +83,48 @@ int main() {
     base.maxPoints = 0;
     base.n = nrig*2;
     base.k = postiLiberi;
-    base.maxPoints = disposizioniSempl(base, dati, nc, nr, bestSol);
+    base.maxPoints = disposizioniSempl(base, dati, nc, nr, bestSol, tabella);
     printf("Massimo punti: %d", base.maxPoints);
-    return 0;
+    printf("\nCon la soluzione: \n");
+
+    for(i=0; i<postiLiberi; i++){
+        printf("%d %d\n", bestSol[i].indice, bestSol[i].ruotata);
+    }
+//    casella * asd = malloc(sizeof(casella)*5);
+//    asd[0].indice = 8;
+//    asd[1].indice = 7;
+//    asd[2].indice = 6;
+//    asd[3].indice = 5;
+//    asd[4].indice = 4;
+//    asd[0].ruotata = 1;
+//    asd[1].ruotata = 1;
+//    asd[2].ruotata = 1;
+//    asd[3].ruotata = 1;
+//    asd[4].ruotata = 1;
+//    printf("%d", contaVal(asd, dati, nc, nr, nrig, tabella, base.k));
+    return base.maxPoints;
+
 }
 
-
-int trovaValMax(char *filename1, char *filename2);
-
-
-int disposizioniSempl(datiBase base, tubi *dati, int nc, int nr, casella **bestSol){
-    int i, valLoc, r, c;
+int disposizioniSempl(datiBase base, tubi *dati, int nc, int nr, casella *bestSol, casella **board){
+    int i, valLoc = 0, r, c;
     if(base.pos >= base.k){
-        for(i=0; i<base.k;i++){
-            setbuf(stdout, 0);
-            printf("%d %d\t", base.sol[i].indice, base.sol[i].ruotata);
+        valLoc = contaVal(base.sol, dati, nc, nr, (base.n)/2, board, base.k);
+        if(valLoc > base.maxPoints) {
+            base.maxPoints = valLoc;
+            for(i = 0; i < base.k; i++)
+                bestSol[i] = base.sol[i];
         }
-        setbuf(stdout, 0);
-        printf("\n");
-        //valLoc = contaVal(sol, dati, nc, nr, n/2);
-//        if(valLoc > maxPoints)
-//            maxPoints = valLoc;
-        return base.maxPoints+1;
+        return base.maxPoints;
     }
     for(i=0; i<base.n; i++){
         if(!base.mark[i]){
             base.mark[i] = 1;
-            base.sol[i].indice = base.val[i].indice;
-            base.sol[i].ruotata = base.val[i].ruotata;
+            base.sol[base.pos] = base.val[i];
             base.pos++;
-            base.maxPoints = disposizioniSempl(base, dati, nc, nr, bestSol);
+            base.maxPoints = disposizioniSempl(base, dati, nc, nr, bestSol, board);
             base.mark[i] = 0;
+            base.pos--;
         }
     }
     return base.maxPoints;
@@ -132,37 +143,61 @@ casella *generaListaCaselle(int nrig){
     return dati;
 }
 
-int contaVal(casella **sol, tubi *dati, int nc, int nr, int nTubi){
-    int i, j, lineaOk = 1, indiceTubo, indiceTuboDopo, punti = 0;
-    // conteggio dei punti per righe
-    for(i=0; i<nr; i++){
-        for(j=0; lineaOk && j<nc-1; j++){
-            indiceTubo = sol[i][j].indice + nTubi * sol[i][j].ruotata;
-            indiceTuboDopo = sol[i][j+1].indice + nTubi * sol[i][j+1].ruotata;
-            if(dati[indiceTubo].coloreT1 == dati[indiceTuboDopo].coloreT1) {
-                punti += dati[indiceTubo].valoreT1;
-                if(j==nc-2)
-                    punti += dati[indiceTuboDopo].valoreT1;
-            }
-            else
-                lineaOk = 0;
+
+int contaVal(casella *sol, tubi *dati, int nc, int nr, int nTubi, casella **boardIniz, int k){
+    int i, j, l, n, lineaOk, indiceTubo, indiceTuboDopo, punti = 0, puntiLin;
+    casella boardAtt[nc][nr];
+    for(i=0; i<nr; i++)
+        for(j=0; j<nc; j++)
+            boardAtt[i][j] = boardIniz[i][j];
+    // riempie la boardIniz attuale con le caselle della soluzione
+    for(l=0, n =0; n<k && l<(nr*nc); n++){
+        i = l/nr;
+        j = l%nc;
+        while(boardAtt[i][j].indice != -1){
+            l++;
+            i = l/nr;
+            j = l%nc;
         }
+        boardAtt[i][j] = sol[n];
+    }
+
+    // conteggio dei punti per righe
+    for(i=0 ; i<nr; i++){
+        for(j=0, lineaOk=1, puntiLin=0; lineaOk && j<nc-1; j++){
+            indiceTubo = boardAtt[i][j].indice + nTubi * boardAtt[i][j].ruotata;
+            indiceTuboDopo = boardAtt[i][j + 1].indice + nTubi * boardAtt[i][j + 1].ruotata;
+            if(dati[indiceTubo].coloreT1 == dati[indiceTuboDopo].coloreT1) {
+                puntiLin += dati[indiceTubo].valoreT1;
+                if(j==nc-2)
+                    puntiLin += dati[indiceTuboDopo].valoreT1;
+            }
+            else{
+                lineaOk = 0;
+                puntiLin = 0;
+            }
+        }
+        punti += puntiLin;
     }
     // conteggio dei punti per colonne
     for(i=0; i<nc; i++){
-        for(j=0; lineaOk && j<nr-1; j++){
-            indiceTubo = sol[j][i].indice + nTubi * sol[j][i].ruotata;
-            indiceTuboDopo = sol[j+1][i].indice + nTubi * sol[j+1][i].ruotata;
+        for(j=0, lineaOk=1, puntiLin=0; lineaOk && j<nr-1; j++){
+            indiceTubo = boardAtt[j][i].indice + nTubi * boardAtt[j][i].ruotata;
+            indiceTuboDopo = boardAtt[j + 1][i].indice + nTubi * boardAtt[j + 1][i].ruotata;
             if(dati[indiceTubo].coloreT2 == dati[indiceTuboDopo].coloreT2) {
-                punti += dati[indiceTubo].valoreT2;
+                puntiLin += dati[indiceTubo].valoreT2;
                 if(j==nr-2)
-                    punti += dati[indiceTuboDopo].valoreT2;
+                    puntiLin += dati[indiceTuboDopo].valoreT2;
             }
-            else
+            else{
                 lineaOk = 0;
+                puntiLin = 0;
+            }
 
         }
+        punti += puntiLin;
     }
+
     return punti;
 }
 
