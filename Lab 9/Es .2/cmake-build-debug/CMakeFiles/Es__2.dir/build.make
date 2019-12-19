@@ -56,32 +56,107 @@ include CMakeFiles/Es__2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Es__2.dir/flags.make
 
-CMakeFiles/Es__2.dir/main.c.obj: CMakeFiles/Es__2.dir/flags.make
-CMakeFiles/Es__2.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Es__2.dir/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\main.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\main.c"
+CMakeFiles/Es__2.dir/gdr.c.obj: CMakeFiles/Es__2.dir/flags.make
+CMakeFiles/Es__2.dir/gdr.c.obj: ../gdr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Es__2.dir/gdr.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\gdr.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\gdr.c"
 
-CMakeFiles/Es__2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\main.c" > CMakeFiles\Es__2.dir\main.c.i
+CMakeFiles/Es__2.dir/gdr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/gdr.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\gdr.c" > CMakeFiles\Es__2.dir\gdr.c.i
 
-CMakeFiles/Es__2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\main.c" -o CMakeFiles\Es__2.dir\main.c.s
+CMakeFiles/Es__2.dir/gdr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/gdr.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\gdr.c" -o CMakeFiles\Es__2.dir\gdr.c.s
+
+CMakeFiles/Es__2.dir/inv.c.obj: CMakeFiles/Es__2.dir/flags.make
+CMakeFiles/Es__2.dir/inv.c.obj: ../inv.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Es__2.dir/inv.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\inv.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\inv.c"
+
+CMakeFiles/Es__2.dir/inv.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/inv.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\inv.c" > CMakeFiles\Es__2.dir\inv.c.i
+
+CMakeFiles/Es__2.dir/inv.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/inv.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\inv.c" -o CMakeFiles\Es__2.dir\inv.c.s
+
+CMakeFiles/Es__2.dir/invArray.c.obj: CMakeFiles/Es__2.dir/flags.make
+CMakeFiles/Es__2.dir/invArray.c.obj: ../invArray.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Es__2.dir/invArray.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\invArray.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\invArray.c"
+
+CMakeFiles/Es__2.dir/invArray.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/invArray.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\invArray.c" > CMakeFiles\Es__2.dir\invArray.c.i
+
+CMakeFiles/Es__2.dir/invArray.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/invArray.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\invArray.c" -o CMakeFiles\Es__2.dir\invArray.c.s
+
+CMakeFiles/Es__2.dir/pg.c.obj: CMakeFiles/Es__2.dir/flags.make
+CMakeFiles/Es__2.dir/pg.c.obj: ../pg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Es__2.dir/pg.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\pg.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\pg.c"
+
+CMakeFiles/Es__2.dir/pg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/pg.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\pg.c" > CMakeFiles\Es__2.dir\pg.c.i
+
+CMakeFiles/Es__2.dir/pg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/pg.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\pg.c" -o CMakeFiles\Es__2.dir\pg.c.s
+
+CMakeFiles/Es__2.dir/equipArray.c.obj: CMakeFiles/Es__2.dir/flags.make
+CMakeFiles/Es__2.dir/equipArray.c.obj: ../equipArray.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Es__2.dir/equipArray.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\equipArray.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\equipArray.c"
+
+CMakeFiles/Es__2.dir/equipArray.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/equipArray.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\equipArray.c" > CMakeFiles\Es__2.dir\equipArray.c.i
+
+CMakeFiles/Es__2.dir/equipArray.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/equipArray.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\equipArray.c" -o CMakeFiles\Es__2.dir\equipArray.c.s
+
+CMakeFiles/Es__2.dir/pgList.c.obj: CMakeFiles/Es__2.dir/flags.make
+CMakeFiles/Es__2.dir/pgList.c.obj: ../pgList.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Es__2.dir/pgList.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Es__2.dir\pgList.c.obj   -c "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\pgList.c"
+
+CMakeFiles/Es__2.dir/pgList.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es__2.dir/pgList.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\pgList.c" > CMakeFiles\Es__2.dir\pgList.c.i
+
+CMakeFiles/Es__2.dir/pgList.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es__2.dir/pgList.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\pgList.c" -o CMakeFiles\Es__2.dir\pgList.c.s
 
 # Object files for target Es__2
 Es__2_OBJECTS = \
-"CMakeFiles/Es__2.dir/main.c.obj"
+"CMakeFiles/Es__2.dir/gdr.c.obj" \
+"CMakeFiles/Es__2.dir/inv.c.obj" \
+"CMakeFiles/Es__2.dir/invArray.c.obj" \
+"CMakeFiles/Es__2.dir/pg.c.obj" \
+"CMakeFiles/Es__2.dir/equipArray.c.obj" \
+"CMakeFiles/Es__2.dir/pgList.c.obj"
 
 # External object files for target Es__2
 Es__2_EXTERNAL_OBJECTS =
 
-Es__2.exe: CMakeFiles/Es__2.dir/main.c.obj
+Es__2.exe: CMakeFiles/Es__2.dir/gdr.c.obj
+Es__2.exe: CMakeFiles/Es__2.dir/inv.c.obj
+Es__2.exe: CMakeFiles/Es__2.dir/invArray.c.obj
+Es__2.exe: CMakeFiles/Es__2.dir/pg.c.obj
+Es__2.exe: CMakeFiles/Es__2.dir/equipArray.c.obj
+Es__2.exe: CMakeFiles/Es__2.dir/pgList.c.obj
 Es__2.exe: CMakeFiles/Es__2.dir/build.make
 Es__2.exe: CMakeFiles/Es__2.dir/linklibs.rsp
 Es__2.exe: CMakeFiles/Es__2.dir/objects1.rsp
 Es__2.exe: CMakeFiles/Es__2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Es__2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 9\Es .2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Es__2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Es__2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

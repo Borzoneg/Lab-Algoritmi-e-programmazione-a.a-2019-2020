@@ -17,16 +17,18 @@ typedef struct pg_s {
   equipArray_t equip;
 } pg_t;
 
-/* lettura e scrittura su file */
+// lettura da file
 int pg_read(FILE *fp, pg_t *pgp);
-/* non essendo struct dinamica, pulisce chiamando il distruttire di equipArray */
+
+// non essendo struct dinamica, pulisce chiamando il distruttire di equipArray
 void pg_clean(pg_t *pgp);
 
+// scrittura su file
 void pg_print(FILE *fp, pg_t *pgp, invArray_t invArray);
-/* modifica personaggio aggiungendo/togliendo un equipaggiamento selezionato da inventario:
-di fatto e' sufficiente chiamare l'opportuna funzione dal modulo equipArray */
+
+// aggunta/rimozione oggetto da personaggio con la funzione di equipArray.h
 void pg_updateEquip(pg_t *pgp, invArray_t invArray);
 
-/* Si possono aggiungere altre funzioni se ritenute necessarie */
-
+// update in seguito a rimozione/aggiunta di oggetto
+void pg_updateStat(pg_t *pgp, stat_t stat, int rimozione);
 #endif

@@ -74,7 +74,37 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/main.c">
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/equipArray.c">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/equipArray.h">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/gdr.c">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/inv.c">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/inv.h">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.c">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.h">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.c">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.h">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pgList.c">
+			<Option target="Es__2"/>
+		</Unit>
+		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pgList.h">
 			<Option target="Es__2"/>
 		</Unit>
 		<Unit filename="C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/CMakeLists.txt">

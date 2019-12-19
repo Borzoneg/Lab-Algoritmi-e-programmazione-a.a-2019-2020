@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Es__2.dir/main.c.obj"
+  "CMakeFiles/Es__2.dir/equipArray.c.obj"
+  "CMakeFiles/Es__2.dir/gdr.c.obj"
+  "CMakeFiles/Es__2.dir/inv.c.obj"
+  "CMakeFiles/Es__2.dir/invArray.c.obj"
+  "CMakeFiles/Es__2.dir/pg.c.obj"
+  "CMakeFiles/Es__2.dir/pgList.c.obj"
   "Es__2.exe"
   "Es__2.exe.manifest"
   "Es__2.pdb"
