@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/equipArray.c
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/equipArray.c
 equipArray.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/equipArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/equipArray.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/equipArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/equipArray.h
 stdlib.h
 -
 string.h
@@ -18,9 +18,9 @@ string.h
 stdio.h
 -
 invArray.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/invArray.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/gdr.c
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/gdr.c
 stdlib.h
 -
 string.h
@@ -28,17 +28,17 @@ string.h
 stdio.h
 -
 pgList.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pgList.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pgList.h
 invArray.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/invArray.h
 pg.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pg.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/inv.c
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/inv.c
 inv.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/inv.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/inv.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/inv.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/inv.h
 stdlib.h
 -
 string.h
@@ -46,11 +46,11 @@ string.h
 stdio.h
 -
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.c
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/invArray.c
 invArray.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/invArray.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/invArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/invArray.h
 stdlib.h
 -
 string.h
@@ -58,13 +58,13 @@ string.h
 stdio.h
 -
 inv.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/inv.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/inv.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.c
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pg.c
 pg.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pg.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pg.h
 stdlib.h
 -
 string.h
@@ -72,13 +72,13 @@ string.h
 stdio.h
 -
 equipArray.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/equipArray.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/equipArray.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pgList.c
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pgList.c
 pgList.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pgList.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pgList.h
 
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pgList.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pgList.h
 stdlib.h
 -
 string.h
@@ -86,5 +86,5 @@ string.h
 stdio.h
 -
 pg.h
-C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es .2/pg.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 9/Es. 2/pg.h
 

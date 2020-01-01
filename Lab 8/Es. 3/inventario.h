@@ -36,5 +36,6 @@ typedef struct {
 void leggiFileOggetti(DBogg *dati, char *filename);
 int nome2IndOgg(char *nome, DBogg dati);
 void stampaOgg(char *nome, DBogg dati);
+void liberaDBogg(DBogg * dati);
 
 #endif //ES__3_INVENTARIO_H

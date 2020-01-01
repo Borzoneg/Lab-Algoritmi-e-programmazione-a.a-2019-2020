@@ -35,5 +35,6 @@ linkPers daCodiceAP(char *codice, linkPers head);
 stats calcolaStats(DBogg listaOgg, linkPers personaggio);
 stats bonusCumulativi(DBogg listaOgg, int* oggettiDelPg);
 void stampaPersonaggio(char *codice, DBpg *datiPg, DBogg *datiOgg);
+void liberaDBpg(DBpg *dati);
 
 #endif

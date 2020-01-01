@@ -12,60 +12,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9affa858-78d7-4a9a-8933-d1ef7f419140" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Es__2.dir/main.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/Es__2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/Es__2.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 6/Es. 2/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__3.dir/main.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Es__3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Es__3.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inventario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/inventario.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/pg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/pg.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Es__3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Es__3.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/inventario.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/inventario.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/personaggio..c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/CMakeFiles/Es__3.dir/personaggio..c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/Es__3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/Es__3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/Milo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/inventario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/inventario.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/cmake-build-debug/pg.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/inventario.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/inventario.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/inventario.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/inventario.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/personaggio..c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/personaggio..c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab 8/Es. 3/personaggio.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab 8/Es. 3/personaggio.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Es. 1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.C/C++" />
   </component>
   <component name="RecentsManager">
@@ -138,6 +101,7 @@
       <workItem from="1575277195229" duration="5308000" />
       <workItem from="1575283297987" duration="1162000" />
       <workItem from="1575299157371" duration="2369000" />
+      <workItem from="1577473420498" duration="1282000" />
     </task>
     <servers />
   </component>
@@ -178,26 +142,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.-1.right/0.0.1536.864@0.0.1536.864" timestamp="1575279929457" />
-    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1575301531591">
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1577474705004">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575207358597" />
-    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1575301531591" />
-    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1575301531591">
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577474705004" />
+    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1577474705004">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575207358596" />
-    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1575301531591" />
-    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1575301531590">
+    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577474705004" />
+    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1577474705004">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575207358594" />
-    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1575301531590" />
-    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1575301531591">
+    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577474705004" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1577474705004">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575207358596" />
-    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1575301531591" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577474705004" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1575279920350">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -229,17 +193,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>98</line>
+          <line>87</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>99</line>
+          <line>88</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>148</line>
+          <line>137</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

@@ -97,7 +97,8 @@ int main() {
                 stampaOgg(dato, *datiOgg);
                 break;
             case fine:
-                // TODO: free di tutti i dati allocati dinamicamene attraverso funzioni
+                liberaDBpg(datiPg);
+                liberaDBogg(datiOgg);
                 continua = 0;
                 break;
             default:

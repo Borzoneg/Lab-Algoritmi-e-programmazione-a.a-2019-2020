@@ -2,27 +2,31 @@
 
 void leggiFileOggetti(DBogg *dati, char *filename){
     char nome[N], tipo[N];
-    int hp, mp, atk, def, mag, spr, i;
+    int hp, mp, atk, def, mag, spr, i, a;
     FILE *fp = fopen(filename, "r");
     if(fp == NULL){
         printf("File non trovato");
         exit(1);
     }
-    fscanf(fp, "%d", &dati->nOgg);
-    oggetto *oggetti = malloc(sizeof(oggetto) * dati->nOgg);
-    for(i=0; i< dati->nOgg;i++){
+    fscanf(fp, "%d", &a);
+    dati->nOgg += a;
+    if(dati->listaOgg == NULL)
+        dati->listaOgg = malloc(sizeof(oggetto) * dati->nOgg);
+    else
+        dati->listaOgg = realloc(dati->listaOgg, sizeof(oggetto) * dati->nOgg);
+    for(i=dati->nOgg-a; i< dati->nOgg;i++) {
         fscanf(fp, "%s %s %d %d %d %d %d %d", nome, tipo, &hp, &mp, &atk, &def, &mag, &spr);
-        oggetti[i].nome = strdup(nome);
-        oggetti[i].tipo = strdup(tipo);
-        oggetti[i].bonusOgg.hp = hp;
-        oggetti[i].bonusOgg.mp = mp;
-        oggetti[i].bonusOgg.atk = atk;
-        oggetti[i].bonusOgg.def = def;
-        oggetti[i].bonusOgg.mag = mag;
-        oggetti[i].bonusOgg.spr = spr;
+        dati->listaOgg[i].nome = strdup(nome);
+        dati->listaOgg[i].tipo = strdup(tipo);
+        dati->listaOgg[i].bonusOgg.hp = hp;
+        dati->listaOgg[i].bonusOgg.mp = mp;
+        dati->listaOgg[i].bonusOgg.atk = atk;
+        dati->listaOgg[i].bonusOgg.def = def;
+        dati->listaOgg[i].bonusOgg.mag = mag;
+        dati->listaOgg[i].bonusOgg.spr = spr;
     }
-    dati->listaOgg = oggetti;
 }
+
 
 int nome2IndOgg(char *nome, DBogg dati){
     int i;
@@ -45,4 +49,15 @@ void stampaOgg(char *nome, DBogg dati){
     stats b = dati.listaOgg[index].bonusOgg;
     printf("%s %s %d %d %d %d %d %d\n",
             dati.listaOgg[index].nome, dati.listaOgg[index].tipo, b.hp, b.mp, b.atk, b.def, b.mag, b.spr);
+}
+
+
+void liberaDBogg(DBogg * dati){
+    int i;
+    for(i=0; i<dati->nOgg; i++){
+        free(dati->listaOgg[i].nome);
+        free(dati->listaOgg[i].tipo);
+    }
+    free(dati->listaOgg);
+    free(dati);
 }

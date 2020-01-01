@@ -56,8 +56,8 @@ typedef struct {
 
 typedef enum{aggiungi, rimuovi, importaPg, importaOgg, addOggApg, rimOggApg, calcola, fine}menu;
 
-DBpg* aggiungiPersonaggio(DBpg *dati, linkPers newPg);
-DBpg* leggiFilePg(DBpg *dati, char *filename);
+void aggiungiPersonaggio(DBpg *dati, linkPers newPg);
+void leggiFilePg(DBpg *dati, char *filename);
 linkPers eliminaPersonaggio(DBpg *dati, char *codice);
 void leggiFileOggetti(DBogg *dati, char *filename);
 int aggiungiOggAPg(linkPers personaggio, int indexOgg, int maxOgg);
@@ -84,17 +84,6 @@ int main() {
     datiOgg->listaOgg = NULL;
     datiOgg->maxOgg = M;
 
-    /**************************** INIZIO TEST ****************************/
-//    datiPg = leggiFilePg(datiPg, "pg.txt");
-//    leggiFileOggetti("inventario.txt", datiOgg);
-//    eliminaPersonaggio(datiPg, "PG01");
-//    linkPers cane = daCodiceAP("PG02", datiPg->head);
-//    int oggetto = nome2IndOgg("scudodiscudi", *datiOgg);
-//    aggiungiOggAPg(cane, oggetto, datiOgg->maxOgg);
-//    aggiungiOggAPg(cane, 0, datiOgg->maxOgg);
-//    rimuoviOggaPg(cane->next, oggetto, datiOgg->maxOgg);
-//    stats a = calcolaStats(*datiOgg, cane);
-    /**************************** FINE TEST ****************************/
 
     while(continua){
         printf("Aggiungi: aggiungi personaggio\n"
@@ -200,24 +189,26 @@ int main() {
 }
 
 
-DBpg *aggiungiPersonaggio(DBpg *dati, linkPers newPg){
+void aggiungiPersonaggio(DBpg *dati, linkPers newPg){
     linkPers i;
     if(dati->head==NULL){
+        newPg->next = NULL;
         dati->head = newPg;
         dati->tail = newPg;
         dati->nPersonaggi++;
-        return dati;
+        return;
     }
     for(i=dati->head; i->next!=NULL; i=i->next);
     i->next = newPg;
     dati->tail = newPg;
     dati->nPersonaggi++;
-    return dati;
 }
 
 
 linkPers eliminaPersonaggio(DBpg *dati, char *codice){
     linkPers i, tmp = NULL;
+    if(dati->head == NULL)
+        return tmp;
     if(!strcmp(dati->head->codice, codice)){
         if(dati->head == dati->tail)
             dati->tail = NULL;
@@ -249,19 +240,19 @@ linkPers eliminaPersonaggio(DBpg *dati, char *codice){
 }
 
 
-DBpg *leggiFilePg(DBpg *dati, char *filename){
-    FILE *fp  =fopen(filename, "r");
-    if(fp == NULL){
+void leggiFilePg(DBpg *dati, char *filename) {
+    FILE *fp = fopen(filename, "r");
+    if(fp == NULL) {
         printf("File non trovato");
         exit(1);
     }
     char nome[N], classe[N], codice[N];
     int hp, mp, atk, def, mag, spr;
-    while((fscanf(fp ,"%s %s %s %d %d %d %d %d %d", codice, nome, classe, &hp, &mp, &atk, &def, &mag, &spr)) ==9){
+    while((fscanf(fp, "%s %s %s %d %d %d %d %d %d", codice, nome, classe, &hp, &mp, &atk, &def, &mag, &spr)) == 9) {
         linkPers newEl = malloc(sizeof(personaggio));
         newEl->codice = strdup(codice);
         newEl->nome = strdup(nome);
-        newEl->classe =strdup(classe);
+        newEl->classe = strdup(classe);
         newEl->statPers.hp = hp;
         newEl->statPers.mp = mp;
         newEl->statPers.atk = atk;
@@ -271,35 +262,37 @@ DBpg *leggiFilePg(DBpg *dati, char *filename){
         newEl->equipPers.indiciOgg = NULL;
         newEl->equipPers.inUso = 0;
         newEl->next = NULL;
-        dati = aggiungiPersonaggio(dati, newEl);
+        aggiungiPersonaggio(dati, newEl);
     }
     fclose(fp);
-    return dati;
 }
 
 
 void leggiFileOggetti(DBogg *dati, char *filename){
     char nome[N], tipo[N];
-    int hp, mp, atk, def, mag, spr, i;
+    int hp, mp, atk, def, mag, spr, i, a;
     FILE *fp = fopen(filename, "r");
     if(fp == NULL){
         printf("File non trovato");
         exit(1);
     }
-    fscanf(fp, "%d", &dati->nOgg);
-    oggetto *oggetti = malloc(sizeof(oggetto) * dati->nOgg);
-    for(i=0; i< dati->nOgg;i++){
+    fscanf(fp, "%d", &a);
+    dati->nOgg += a;
+    if(dati->listaOgg == NULL)
+        dati->listaOgg = malloc(sizeof(oggetto) * dati->nOgg);
+    else
+        dati->listaOgg = realloc(dati->listaOgg, sizeof(oggetto) * dati->nOgg);
+    for(i=dati->nOgg-a; i< dati->nOgg;i++) {
         fscanf(fp, "%s %s %d %d %d %d %d %d", nome, tipo, &hp, &mp, &atk, &def, &mag, &spr);
-        oggetti[i].nome = strdup(nome);
-        oggetti[i].tipo = strdup(tipo);
-        oggetti[i].bonusOgg.hp = hp;
-        oggetti[i].bonusOgg.mp = mp;
-        oggetti[i].bonusOgg.atk = atk;
-        oggetti[i].bonusOgg.def = def;
-        oggetti[i].bonusOgg.mag = mag;
-        oggetti[i].bonusOgg.spr = spr;
+        dati->listaOgg[i].nome = strdup(nome);
+        dati->listaOgg[i].tipo = strdup(tipo);
+        dati->listaOgg[i].bonusOgg.hp = hp;
+        dati->listaOgg[i].bonusOgg.mp = mp;
+        dati->listaOgg[i].bonusOgg.atk = atk;
+        dati->listaOgg[i].bonusOgg.def = def;
+        dati->listaOgg[i].bonusOgg.mag = mag;
+        dati->listaOgg[i].bonusOgg.spr = spr;
     }
-    dati->listaOgg = oggetti;
 }
 
 
@@ -336,18 +329,18 @@ int rimuoviOggaPg(linkPers personaggio, int indexOgg, int maxOgg){
 
 
 stats calcolaStats(DBogg listaOgg, linkPers personaggio){
-    int i;
     stats finali;
+    finali.hp=0;
+    finali.mp=0;
+    finali.atk=0;
+    finali.def=0;
+    finali.mag=0;
+    finali.spr=0;
     if(personaggio==NULL) {
-        finali.hp=0;
-        finali.mp=0;
-        finali.atk=0;
-        finali.def=0;
-        finali.mag=0;
-        finali.spr=0;
         return finali;
     }
-    finali = bonusCumulativi(listaOgg, personaggio->equipPers.indiciOgg);
+    if(listaOgg.listaOgg != NULL)
+        finali = bonusCumulativi(listaOgg, personaggio->equipPers.indiciOgg);
     finali.hp += personaggio->statPers.hp;
     finali.mp += personaggio->statPers.mp;
     finali.atk += personaggio->statPers.atk;

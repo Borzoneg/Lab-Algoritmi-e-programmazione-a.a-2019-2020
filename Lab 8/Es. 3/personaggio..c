@@ -169,15 +169,22 @@ stats bonusCumulativi(DBogg listaOgg, int* oggettiDelPg){
 
 
 void stampaPersonaggio(char *codice, DBpg *datiPg, DBogg *datiOgg){
-    int i;
+    int i, hp, mp, atk, def, mag, spr;
     linkPers el = daCodiceAP(codice, datiPg->head);
     if(el==NULL){
         printf("Peronaggio non esistente\n");
         return;
     }
     stats sF = calcolaStats(*datiOgg, el);
+    hp = sF.hp < 1 ? 1 : sF.hp;
+    mp = sF.mp < 1 ? 1 : sF.mp;
+    atk = sF.atk < 1 ? 1 : sF.atk;
+    def = sF.def < 1 ? 1 : sF.def;
+    mag = sF.mag < 1 ? 1 : sF.mag;
+    spr = sF.spr < 1 ? 1 : sF.spr;
+
     printf("%s %s %s %d %d %d %d %d %d\n",
-            el->codice, el->nome, el->classe, sF.hp, sF.mp, sF.atk, sF.def, sF.mag, sF.spr);
+            el->codice, el->nome, el->classe, hp, mp, atk, def, mag, spr);
     printf("Equipaggiamento:");
     if(el->equipPers.inUso){
         for(i=0; i < datiOgg->maxOgg; i++){
@@ -186,4 +193,17 @@ void stampaPersonaggio(char *codice, DBpg *datiPg, DBogg *datiOgg){
         }
     }
     printf("\n");
+}
+
+
+void liberaDBpg(DBpg *dati){
+    linkPers i, tmp;
+    for(i=dati->head; i!=NULL; i = i->next, free(tmp)){
+        free(i->nome);
+        free(i->classe);
+        free(i->codice);
+        free(i->equipPers.indiciOgg);
+        tmp = i;
+    }
+    free(dati);
 }
