@@ -1,0 +1,28 @@
+0: Alderaan
+1: Axii
+2: Azrael
+3: Bahamut
+4: Cassiel
+5: Coruscan
+6: Ifrit
+7: Igni
+8: Quen
+9: Ramuh
+10: Shiva
+11: Tatooine
+12: Uriel
+13: Yrden
+Alderaan: Ifrit 13, Ramuh 9, Shiva 98, Yrden 20, 
+Axii: Cassiel 13, Igni 42, 
+Azrael: Cassiel 9, Ramuh 23, 
+Bahamut: Tatooine 33, Uriel 99, 
+Cassiel: Axii 13, Azrael 9, Shiva 1, Yrden 20, 
+Coruscan: Quen 45, 
+Ifrit: Alderaan 13, Shiva 46, Tatooine 2, 
+Igni: Axii 42, Quen 18, Tatooine 67, Uriel 45, 
+Quen: Coruscan 45, Igni 18, 
+Ramuh: Alderaan 9, Azrael 23, Tatooine 111, 
+Shiva: Alderaan 98, Cassiel 1, Ifrit 46, Tatooine 12, Yrden 17, 
+Tatooine: Bahamut 33, Ifrit 2, Igni 67, Ramuh 111, Shiva 12, 
+Uriel: Bahamut 99, Igni 45, 
+Yrden: Alderaan 20, Cassiel 20, Shiva 17, 

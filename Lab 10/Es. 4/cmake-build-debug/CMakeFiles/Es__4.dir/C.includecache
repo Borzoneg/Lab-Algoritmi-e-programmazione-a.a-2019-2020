@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 10/Es. 4/grafo.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 10/Es. 4/main.c
+grafo.h
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 10/Es. 4/grafo.h
+

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Es__4" targetName="Es__4" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4d640497-0f34-4914-9c0c-9115ffaf6b2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Es. 1/easy_test_set.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 1/hard_test_set.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 1/spiegazione.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 1/test_set_hard_result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 1/very_easy_test_set.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 1/very_very_easy_test_set.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 2/elementi.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 3/elementi.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Es. 3/testset_e_risultati.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Es. 4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/linklibs.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/objects1.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Es__4.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Es__4.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/grafo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafo.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grafo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E1/easy_test_set.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E1/hard_test_set.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E1/spiegazione.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E1/test_set_hard_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E1/very_easy_test_set.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E1/very_very_easy_test_set.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E2/elementi.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E2/testset_e_risultati.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E3/elementi.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files (aggiornato 26_12_2019)/input files/E4/grafo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files/input files/F1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files/input files/F2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../input files/input files/F3.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\borzo\Documents\Programmazione\C\Lab-Algoritmi-e-programmazione-a.a-2019-2020\Lab 10\Es. 4\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WAaNcGamcE0H6QJmljyMz5fTyS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lab 9/Es. 2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Es__4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Es__4" TARGET_NAME="Es__4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Es__4" RUN_TARGET_NAME="Es__4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d640497-0f34-4914-9c0c-9115ffaf6b2a" name="Default Changelist" comment="" />
+      <created>1578594813287</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578594813287</updated>
+      <workItem from="1578594814493" duration="6961000" />
+      <workItem from="1578663332152" duration="10835000" />
+      <workItem from="1579079345713" duration="500000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="90" key="#New_File_Extensions" timestamp="1578595287296">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="90" key="#New_File_Extensions/0.0.1536.864@0.0.1536.864" timestamp="1578595287296" />
+    <state x="549" y="186" key="FileChooserDialogImpl" timestamp="1579079844163">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1579079844163" />
+    <state width="723" height="275" key="GridCell.Tab.0.bottom" timestamp="1578674815018">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="275" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1578674815018" />
+    <state width="723" height="275" key="GridCell.Tab.0.center" timestamp="1578674815018">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="275" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1578674815018" />
+    <state width="723" height="275" key="GridCell.Tab.0.left" timestamp="1578674815018">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="275" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1578674815018" />
+    <state width="723" height="275" key="GridCell.Tab.0.right" timestamp="1578674815018">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="275" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1578674815018" />
+    <state x="762" y="0" width="781" height="870" key="dock-window-1" timestamp="1578667871540">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="762" y="0" width="781" height="870" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1578667871540" />
+    <state x="762" y="0" width="781" height="870" key="dock-window-2" timestamp="1578672899310">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="762" y="0" width="781" height="870" key="dock-window-2/0.0.1536.864@0.0.1536.864" timestamp="1578672899310" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1578667769386">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1578667769386" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1578595845324">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1578595845324" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
