@@ -1,0 +1,3 @@
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Altro/Spazi delle soluzioni/cmake-build-debug/CMakeFiles/Spazi_delle_soluzioni.dir
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Altro/Spazi delle soluzioni/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Altro/Spazi delle soluzioni/cmake-build-debug/CMakeFiles/rebuild_cache.dir

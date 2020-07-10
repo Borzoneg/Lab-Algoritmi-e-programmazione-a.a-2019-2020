@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 00/Es. 1/main.c" "C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Lab 00/Es. 1/cmake-build-debug/CMakeFiles/untitled.dir/main.c.obj"
+  "C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Altro/Spazi delle soluzioni/main.c" "C:/Users/borzo/Documents/Programmazione/C/Lab-Algoritmi-e-programmazione-a.a-2019-2020/Altro/Spazi delle soluzioni/cmake-build-debug/CMakeFiles/Spazi_delle_soluzioni.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
