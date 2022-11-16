@@ -6,6 +6,7 @@ The topics were:
   
   - Tree
   - Graphs
+  - Navigation of trees
   - Recursion
   - Sorting
   - complexity of an algorithm
