@@ -1,4 +1,13 @@
 # Lab-Algoritmi-e-programmazione-a.a-2019-2020
 
-I testi degli esercizi sono nella cartella "Testi"<br>
-I file di ogni esercizio sono nella cartella del programma relativo a quel singolo esercizio
+All the exercitation from the class "algorithm and programming"
+
+The topics were:
+  
+  - Tree
+  - Graphs
+  - Recursion
+  - Sorting
+  - complexity of an algorithm
+  - In depth usage of allocator and pointer
+  - Data structure (linked list, array, ...)
